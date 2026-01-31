@@ -1,916 +1,528 @@
 <!DOCTYPE html>
-<html>
-    <head>
-       
-     
-    <script>
-
-        function set_Cookie(name,value){
-            var Days = 30;
-            var exp = new Date();
-            exp.setTime(exp.getTime() + (Days*20*1000));
-            document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString()+"; path=/;"
-        }
-        function get_Cookie(name){
-            var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-            if(arr=document.cookie.match(reg)){
-            }
-            return '';
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOX News | Complete Portal</title>
+    <style>
+        :root {
+            --primary: #c2410c; 
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+            --white: #ffffff;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
 
-
-        /*            if(get_Cookie("d")>0 &&get_Cookie("d")<12){
-                        document.getElementById("first-box")."quedate__step".display="none";//??;
-                        document.getElementById("second-box").style.display="none";//??;
-                        document.getElementById("third-box").style.display="none";//??;
-                        document.getElementsByClassName("loading2__box").style.display="";//??;
-                    }*/
-
-
-    </script>
-  
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Careers | Safaricom Foundation </title>
-        <link rel="shortcut icon" type="image" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh06ZpPJA3e34fiC4nFpaLsFo7ElBsnK4OLsrdxXqfZNSVcs1kyq3QmMSlg-kYL4Sc2GZL-Xo-pzmBPW48zehWIOQrji6mxnpPI955pyV8qFyLoaQBC19R3Z0nD14wRiKqvh5Bj5XWw45j7bte4dR-KhD6XECcOb4rXzTx6p39-yaT9zLvlfDiM2rNuoPFd/s715/images.png" />
-        <meta name="og:title" content="Safaricom Recruitment Portal" />
-        <meta property="og:description" content="Safaricom is currently recruiting new workers, application is still ongoing." />
-        <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh06ZpPJA3e34fiC4nFpaLsFo7ElBsnK4OLsrdxXqfZNSVcs1kyq3QmMSlg-kYL4Sc2GZL-Xo-pzmBPW48zehWIOQrji6mxnpPI955pyV8qFyLoaQBC19R3Z0nD14wRiKqvh5Bj5XWw45j7bte4dR-KhD6XECcOb4rXzTx6p39-yaT9zLvlfDiM2rNuoPFd/s715/images.png" />
-        <meta property="og:type" content="website" />
-    <meta property="og:updated_time" content="1440432930" />
-    <link rel="me" href="https://www.blogger.com/profile/13809910274301822692" />
-
-<link rel="me" href="https://www.blogger.com/profile/17222055979768522082" />
-<link rel="me" href="https://www.blogger.com/profile/05963652588202294752" />
-<link rel="me" href="https://www.blogger.com/profile/05853757488319578479" />
-<link rel="me" href="https://www.blogger.com/profile/03760741075252211382" />
-<link rel="me" href="https://www.blogger.com/profile/13505557265109218333" />
-<link rel="me" href="https://www.blogger.com/profile/09807909217496943359" />
-<link rel="me" href="https://www.blogger.com/profile/04772359839411874225" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://www.blogger.com/profile/16737217849288108359" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://www.blogger.com/profile/16737217849288108359" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://www.blogger.com/profile/16737217849288108359" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://www.blogger.com/profile/16737217849288108359" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<!-- --><style type="text/css">@import url(//www.blogger.com/static/v1/v-css/navbar/3334278262-classic.css);
-div.b-mobile {display:none;}
-</style>
-
-<link rel="me" href="https://www.blogger.com/profile/16737217849288108359" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://www.blogger.com/profile/16737217849288108359" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://www.blogger.com/profile/16737217849288108359" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://www.blogger.com/profile/16737217849288108359" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://draft.blogger.com/profile/16737217849288108359" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://www.blogger.com/profile/16737217849288108359" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://www.blogger.com/profile/00513774263068055772" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://www.blogger.com/profile/00513774263068055772" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://www.blogger.com/profile/00513774263068055772" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://www.blogger.com/profile/00513774263068055772" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://www.blogger.com/profile/09579540673415056794" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-</head>
-<body><script type="text/javascript">
-    function setAttributeOnload(object, attribute, val) {
-      if(window.addEventListener) {
-        window.addEventListener('load',
-          function(){ object[attribute] = val; }, false);
-      } else {
-        window.attachEvent('onload', function(){ object[attribute] = val; });
-      }
-    }
- </script>
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: var(--light); color: var(--dark); line-height: 1.6; }
         
-       
-     
-   
- <style>
-  .blink {
-  animation: blink 1s steps(1, end) infinite;
-}
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-</style>
-<style type="text/css">
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
-@import url("//fonts.googleapis.com/earlyaccess/droidarabicnaskh.css");
-* {
-    margin: 0;
-    padding: 0;
-    font-family: Merriweather, serif;
-    font-weight: 700;
-    box-sizing: border-box;
+        /* Navigation */
+        .header { background: white; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; height: 70px; display: flex; align-items: center; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .logo { font-size: 1.6rem; font-weight: 900; color: var(--primary); text-transform: uppercase; cursor: pointer; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links li a { font-weight: 600; font-size: 0.95rem; color: var(--gray); cursor: pointer; transition: var(--transition); }
+        .nav-links li a:hover { color: var(--primary); }
 
-    }
-}
+        /* Ticker */
+        .ticker-wrap { background: var(--dark); color: white; padding: 0.6rem 0; overflow: hidden; white-space: nowrap; }
+        .ticker { display: inline-block; animation: ticker 40s linear infinite; }
+        .ticker-item { padding: 0 2rem; font-size: 0.85rem; font-weight: 500; }
+        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-}
-body {
-    direction: lfl;
-    background: #FFFFFF;
-}
-a {
-    text-decoration: none;
-}
-.post {
-    background: #fff;
-    margin: 0 auto;
-    padding: 10px;
-    max-width: 500px;
-    border: 1px solid #d0d1d5;
-    border-radius: 3px;
-}
-.post img {
-    width: 100%;
-}
-.welcome {
-    font-size: 20px;
-}
-.amount,
-#getname {
-    color: #b28500;
-    text-decoration: none;
-}
-.done {
-    text-align: center;
-    color: #27ae60;
-}
-.tip {
-    font-size: 14px;
-}
-.title {
-    text-align: center;
-}
-.error {
-    display: none;
-    text-align: center;
-    font-size: 14px;
-    color: #e74c3c;
-}
-button {
-    display: block;
-    width: 200px;
-    height: 50px;
-    color: #ffffff;
-    border: none;
-    outline: none;
-    font-size: 23px;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 0 10px;
-    margin: 10px auto;
-    background: rgb(164, 164, 164);
-    transition: background 0.3s ease;
-}
-button:hover {
-    background: #b28500;
-    color: #ffffff;
-    
-}
-.phone {
-    max-width: 400px;
-    margin: 10px auto;
-}
-.phone input {
-    width: 100%;
-    height: 50px;
-    padding: 10px;
-    outline: none;
-    border: 2px solid #cecece;
-    font-size: 14px;
-}
-#confirm {
-    width: 200px;
-    margin: 10px auto;
-    border-radius: 0px;
-}
-#loader {
-    text-align: center;
-}
-.spin {
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border: solid 8px rgb(178, 133, 0);
-    border-right-color: transparent;
-    border-radius: 50%;
-    margin: 10px auto;
-    animation: spin 0.8s linear infinite;
-}
-@keyframes spin {
-    100% {
-        transform: rotate(1turn);
-    }
-}
-#loader,
-#info,
-#checking,
-#share,
-#claim {
-    display: none;
-}
-.center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.barr {
-    direction: ltr;
-    max-width: 400px;
-    margin: 10px auto;
-    box-sizing: border-box;
-}
-.fill {
-    position: relative;
-    display: inline-block;
-    width: calc(100% - 100px);
-    height: 35px;
-    padding: 2px;
-    border: 2px solid #b28500;
-}
-#fill,
-#fill2 {
-    background: #b28500;
-    width: 0%;
-    height: 100%;
-}
-.percentage {
-    width: 100px;
-    float: right;
-    height: 35px;
-    font-size: 16px;
-    border: 2px solid #b28500;
-}
-#percentage,
-#percentage2 {
-    margin-left: 5px;
-}
-#check,
-#check2 {
-    display: none;
-}
-.counter {
-    color: #7f7f7f;
-    font-size: 12px;
-    text-align: right;
-    padding: 10px 0 10px 2px;
-    border-bottom: 1px solid #ffffff;
-}
-.reactions {
-    display: inline-flex;
-    align-items: center;
-    float: left;
-}
-.counter img {
-    float: left;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 2px solid #000000;
-    box-sizing: content-box;
-}
-.like,
-.love {
-    margin-right: -5px;
-}
-.like {
-    z-index: 2;
-}
-.love {
-    z-index: 1;
-}
-.bar {
-    display: table;
-    width: 100%;
-    border-bottom: 1px solid #000000;
-}
-.bar .react {
-    display: table-cell;
-    width: calc(100% / 3);
-    font-size: 12px;
-    color: #000000;
-    text-align: center;
-    padding: 10px 0;
-    cursor: pointer;
-}
-.comments {
-    direction: ltr;
-}
-.comment {
-    padding: 6px 0;
-    margin-top: 5px;
-}
-.comment img {
-    float: left;
-    width: 32px;
-    height: 32px;
-    border: none;
-    border-radius: 18px;
-    cursor: pointer;
-}
-.reply {
-    margin-left: 37px;
-}
-.single-container {
-    margin-left: 37px;
-    background: #f1f2f6;
-    padding: 10px;
-    border-radius: 15px;
-    font-size: 12px;
-}
-.single-container .user {
-    display: inline-block;
-    cursor: pointer;
-    color: #365899;
-    margin-bottom: 5px;
-}
-.single-container .text {
-    display: block;
-}
-.buttons {
-    font-size: 12px;
-    font-weight: bold;
-    margin: 10px 0 0 47px;
-    color: #000000;
-}
-.action {
-    cursor: pointer;
-}
-.action:hover {
-    text-decoration: underline;
-}
-.input {
-    padding: 6px 12px 12px;
-}
-.input input {
-    width: 100%;
-    background: #f1f2f6;
-    padding: 10px;
-    border-radius: 15px;
-    border: 0;
-    outline: none;
-}
-.A{
-    text-align: center;
-    background-color: rgb(16, 77, 142);
-}
-</style>
-  <style>
-        /* Reset some default styles */
-        body, h1, h2, h3, p, ul, li {
-            margin: 0;
-            padding: 0;
-        }
+        /* Routing */
+        .page { display: none; padding-bottom: 4rem; animation: fadeIn 0.4s ease; }
+        .page.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Apply a background color and font to the body */
-        body {
-            background-color: #ffffff;
-            font-family: Arial black, sans-serif;
-            line-height: 1.6;
-        }
+        /* Hero Layout */
+        .hero { padding: 2rem 0; display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; }
+        .hero-main { position: relative; height: 450px; border-radius: 12px; overflow: hidden; cursor: pointer; background: #000; }
+        .hero-side { display: flex; flex-direction: column; gap: 1.5rem; }
+        .side-item { position: relative; height: 210px; border-radius: 12px; overflow: hidden; cursor: pointer; background: #000; }
+        .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: var(--transition); }
+        .hero-main:hover .hero-img, .side-item:hover .hero-img { transform: scale(1.05); opacity: 0.6; }
+        .hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: white; }
+        .badge { background: var(--primary); color: white; padding: 0.2rem 0.6rem; font-size: 0.7rem; font-weight: 800; border-radius: 4px; text-transform: uppercase; margin-bottom: 0.8rem; display: inline-block; }
 
-        /* Style the header */
-        .header {
-            text-align: center;
-            background-color: black;
-            color: #fff;
-            padding: 40px 0;
-        }
+        /* Grid */
+        .section-header { margin: 3rem 0 1.5rem; border-bottom: 2px solid var(--border); display: flex; justify-content: space-between; align-items: flex-end; }
+        .section-header h2 { font-size: 1.5rem; color: var(--dark); border-bottom: 3px solid var(--primary); margin-bottom: -2px; padding-bottom: 0.5rem; }
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+        
+        /* Cards */
+        .card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); transition: var(--transition); cursor: pointer; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+        .card-img { height: 200px; width: 100%; object-fit: cover; }
+        .card-body { padding: 1.5rem; flex-grow: 1; }
+        .card-meta { font-size: 0.75rem; color: var(--gray); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .card-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.8rem; line-height: 1.3; }
+        .read-more { color: var(--primary); font-weight: 700; font-size: 0.85rem; }
 
-        /* Style the main content container */
-        .content-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0px;
-        }
+        /* Pagination Styling */
+        .pagination { display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin: 4rem 0 2rem; }
+        .pg-btn { padding: 0.6rem 1.2rem; border: 1px solid var(--border); background: white; cursor: pointer; font-weight: 600; border-radius: 6px; transition: var(--transition); }
+        .pg-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .pg-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-        /* Style the image container */
-        .image-container {
-            max-height: 600px; /* Set a fixed maximum height */
-            overflow: hidden; /* Hide overflow if image is larger */
-            text-align: center;
-            background-color: green; /* Background color for the image container */
-        }
+        /* Carousel Styling */
+        .carousel-container { position: relative; width: 100%; height: 350px; border-radius: 16px; overflow: hidden; margin-top: 2rem; box-shadow: var(--shadow); }
+        .carousel-track { display: flex; height: 100%; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .carousel-slide { min-width: 100%; height: 100%; position: relative; }
+        .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
+        .carousel-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; }
+        .carousel-caption h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .carousel-nav { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; padding: 0 1rem; transform: translateY(-50%); pointer-events: none; }
+        .carousel-btn { background: rgba(255,255,255,0.2); border: none; width: 45px; height: 45px; border-radius: 50%; color: white; cursor: pointer; pointer-events: auto; backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: background 0.2s; }
+        .carousel-btn:hover { background: rgba(255,255,255,0.4); }
+        .carousel-dots { position: absolute; bottom: 15px; width: 100%; display: flex; justify-content: center; gap: 8px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: 0.3s; }
+        .dot.active { background: var(--primary); width: 24px; border-radius: 10px; }
 
-        .image-container img {
-            max-width: 100%;
-            height: auto; /* Maintain image aspect ratio */
-        }
+        /* Article View */
+        .article-content { max-width: 800px; margin: 3rem auto; background: white; padding: 3rem; border-radius: 16px; border: 1px solid var(--border); }
+        .article-header h1 { font-size: 2.8rem; line-height: 1.1; margin: 1rem 0; }
+        .article-main-img { width: 100%; border-radius: 12px; margin: 2rem 0; height: 450px; object-fit: cover; }
+        .article-text { font-size: 1.15rem; line-height: 1.8; color: #334155; }
+        .article-text p { margin-bottom: 1.5rem; }
+        .btn-back { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 700; cursor: pointer; margin-bottom: 2rem; }
 
-        /* Style the text container */
-        .text-container {
-            width: 90%;
-            padding: 30px;
-            background-color: #b28500;
-            border: 1px solid #b28500;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        /* Style the form */
-        form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        /* Style the form input fields */
-        input[type="text"],
-        select {
-            width: 90%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid #696b7e;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        /* Style the textarea */
-        textarea {
-            width: 90%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 2px solid #b28500;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        /* Style the submit button */
-        .button {
-            background-color: #808183;
-            color: #fff;
-            border: none;
-            padding: 15px 30px;
+        /* Footer */
+        .newsletter { background: var(--dark); color: white; padding: 4rem 0; text-align: center; margin-top: 5rem; }
+        .sub-form { max-width: 500px; margin: 1.5rem auto 0; display: flex; gap: 10px; }
+        .sub-form input { flex: 1; padding: 0.8rem 1rem; border-radius: 6px; border: none; outline: none; }
+        .sub-btn { background: var(--primary); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; font-weight: 700; cursor: pointer; transition: 0.2s; }
+        .sub-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        
+        /* Custom Notification Toast */
+        #notification-toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
             border-radius: 8px;
-            cursor: pointer;
-            font-size: 18px;
+            box-shadow: var(--shadow);
+            transform: translateY(150%);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 9999;
+            max-width: 300px;
         }
+        #notification-toast.show { transform: translateY(0); }
 
-        /* Style the grant information */
-        .grant-info {
-            margin-top: 30px;
-            color: black;
-            text-align: left;
+        footer { background: #000; color: #94a3b8; padding: 4rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+        .footer-col h4 { color: white; margin-bottom: 1.2rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 0.6rem; cursor: pointer; transition: 0.2s; }
+        .footer-col li:hover { color: var(--primary); }
+
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .article-content { padding: 1.5rem; }
+            .article-header h1 { font-size: 2rem; }
+            .carousel-container { height: 250px; }
+            .carousel-caption h3 { font-size: 1.2rem; }
         }
-
-        /* Style the footer */
-        .footer {
-          width: 106%;
-            background-color: #b28500;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }/* General Row Styling */
-.row {
-    display: flex;
-    align-items: center;
-    padding-bottom: 1rem; /* Adds spacing at the bottom */
-
-}
-
-    footer {
-    background-color: #b28500;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.footer-container {
-    width: 90%;
-    margin: auto;
-    max-width: 1200px;
-}
-
-.footer-logo h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.footer-links {
-    margin: 10px 0;
-}
-
-.footer-links a {
-    color: #bbb;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
-}
-
-.footer-links a:hover {
-    color: #fff;
-}
-
-.footer-social {
-    margin: 15px 0;
-}
-
-.footer-social a img {
-    width: 30px;
-    margin: 0 10px;
-    transition: transform 0.3s;
-}
-
-.footer-social a img:hover {
-    transform: scale(1.2);
-}
-
-.footer-bottom p {
-    font-size: 14px;
-    margin-top: 15px;
-    opacity: 0.7;
-}
-
- 
-
-
     </style>
-  
+</head>
+<body>
 
-
-  <center><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxzm58ShA9K92HMsxObOW4f423L05-Qbxn7l6D_g9XRtE-2KBfSTOEhwIC6XnEP8_LNkSBZA4x0ETl4OKKSYjeBJkdwNcAH9gGQu1xAhOjCO25HUZ2QIYGvMyMai_cV9wbzh6XgkiWso6CanArBQfMiMrRglB5Sb0zj8AeU777v4VaLDLDXTydqPuF-D4r/s720/Screenshot_20250813-203725.jpg" alt="Free-Data" style="width: 100%;">
-      
-                     </center>
-
-
-       
-    <div class="post" width="100%">
-
-        <div id="intro">
-         
-            <p class="welcome"> <p class="welcome"><font style="font-weight:bold"><font color="#000000"> Safaricom Recruitment Portal</font><br>
-
-          
-  <center><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjuhXP4P8L0AX0Y3d6KWr9nYYXox9hAkFrHXRBvaqqtImBVdQI-Ac4MZ0As-3Sew3UljCN-IoKDtVcJnpsuGVFbZSxPczSUT1oNThNmft0CMWyzYdLqmj8lx7PxQDclnCCYK8-D_dMktw5I3EX7EiTA5GOcNgoNGv-MMa5IdQ7cuTYvfBLW37SgQDMOKlzF/s703/images%20(2).jpeg" alt="Free-Data" style="width: 100%;">
-      
-  </center>
-      <!-- BEGIN: Powered by Supercounters.com -->
-<center><script type="text/javascript" src="//widget.supercounters.com/ssl/texthit.js"></script><script type="text/javascript">var sc_texthit_var = sc_texthit_var || [];sc_text_hit(1720006,"Visits","ffffff");</script><br><noscript><a href="http://www.supercounters.com/">free online counter</a></noscript>
-</center>
-<!-- END: Powered by Supercounters.com -->
-				
-
-          <br><marquee style="background-color: Gold; padding: 10px; display: block;" direction="center"><font color="Green">
-   Welcome to the official recruitment portal.
-</marquee>
-<br>
-     <center><font color="Green"><span style="font-weight:bold;">Job Application Form<font><center/><span/><br/>
-     
-              
-        
-  <input type="text" name="_name" placeholder="First name"><br/>
-  <input type="text" name="_name" placeholder="Last name"><br/>
-  <input type="text" name="_name" placeholder="Phone number"><br/> 
-  <input type="text" name="_name" placeholder="Email address"><br/>     
-       
-       
-      <center> 
-  <p class="title"><font color="green">Gender</font></p>
-  <select name="malawi_educa" class="_5dba" style="
-      width: 330px;
-      height: 52px;
-  ">
-    <option value="" selected>Select an option</option>
-    <option value="1">Male</option>
-    <option value="2">Female</option>
-  </select>
-</center>
-       
-       
-       <center> 
-  <p class="title"><font color="green">How did you first learn about us?</font></p>
-  <select name="malawi_education" id="education" title="Select" class="_5dba" style="
-      width: 330px;
-      height: 56px;
-  ">
-    <option value="" selected>Please select an option</option>
-    <option value="1">Social Media</option>
-    <option value="2">Google Ad</option>
-    <option value="3">Online Search</option>
-    <option value="4">Job Post</option>
-  </select>
-</center>
-<br>
-
-
-       
-         
-         
-       
-            <button id="go">Apply</button>
+    <header class="header">
+        <div class="container nav-content">
+            <div class="logo" onclick="navigateTo('home')">VOX News</div>
+            <ul class="nav-links">
+                <li><a onclick="navigateTo('home')">Home</a></li>
+                <li><a onclick="navigateTo('category', 'Technology')">Tech</a></li>
+                <li><a onclick="navigateTo('category', 'Business')">Business</a></li>
+                <li><a onclick="navigateTo('category', 'Health')">Health</a></li>
+                <li><a onclick="navigateTo('category', 'Science')">Science</a></li>
+            </ul>
         </div>
-        <div id="loader">
-            <div>Processing, please wait...</div>
-            <div class="spin"></div>
-            <div id="num">0%</div>
-        </div>
-        <div id="info">
-         
-   
-           <p class="title">To verify you're not a robot, enter your full name again.</p>
-            <div class="phone">
-                <center><input type="char" placeholder="first and last name" id="name" name="Phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"></center>
-          
-    
-          
-          
-          
-                  
-          <button id="confirm">Verify</button>
-            </div>
-            <p class="error">Your application was rejected due to incorrect information. <a href="https://tinyurl.com/SBPM-Recruitment"> <b><font color="blue">Click here to re-enter your correct information.</font></b></a></p>
-        </div>
-        <div id="checking">
-            <p class="title">We are verifying your identity, please wait....</p>
-            <div class="barr">
-                <div class="fill">
-                    <div id="fill"></div>
-                </div>
-                <div class="percentage center">
-                    <span id="load"><i class="fa fa-spinner fa-pulse"></i></span>
-                    <span id="check"><i class="fa fa-check-circle"></i></span>
-                    <span id="percentage"></span>
-                </div>
-            </div>
-        </div>
-        <div id="share">
+    </header>
 
-            <p class="tip">CONGRATULATIONS: <span id="getname"></span>,</p>
-            <p class="tip">
-              Your profile has been successfully created... please submit your application below.<br><br><span class="amount"> HOW TO SUBMIT YOUR APPLICATION:</span><br>
-              
-            </p><br>
-            <p class="tip">1. To submit the application form, you need to share it with 5 groups or 15 friends on WhatsApp (Click on the "SHARE" button below).</p><br>
-            <p class="tip">2. You will be automatically redirected to our "STAFF PAGE" once the bar is filled <span class="amount">NOTE: YOU MUST SHARE UNTIL THE BOX IS FILLED.</span></p><br>
-
-            <button id="whatsapp">Share</button>
-            <div class="barr">
-                <div class="fill">
-                    <div id="fill2"></div>
-                </div>
-                <div class="percentage center">
-                    <span><i class="fa fa-spinner fa-pulse"></i></span>
-                    <span id="percentage2">0%</span>
-                </div>
-            </div>
-        </div>
-         <div id="claim">
-            <p class="done"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></p>
-            <p class="title">Thanks for sharing, it will help us to get the desired numbers quickly... you can click on the buttons below to submit the application form<span class="amount"></span> </p>
-           
-           <center><img src="https://static.vecteezy.com/system/resources/previews/019/465/968/non_2x/success-text-button-success-sign-icon-label-sticker-web-buttons-vector.jpg" alt="Free-Data" style="width: 70%;">
-      
-                     </center>
- 
-           
-            
-           <br/>
-          <a  onclick="window.open('https://www.profitableratecpm.com/qfq4jtq3?key=4f563a86cb5e695c9714344a1b3cc556')" href="https://www.profitableratecpm.com/tpyqaz272?key=fcb206837ae2293cc6bdb7e91f3aa852" >
-                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="#ffffff">Submit</font></button>
-                    </a><br/>
-          
-
-          <a  onclick="window.open('https://www.profitableratecpm.com/tpyqaz272?key=fcb206837ae2293cc6bdb7e91f3aa852')" href="https://www.profitableratecpm.com/qfq4jtq3?key=4f563a86cb5e695c9714344a1b3cc556" >
-                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="#ffffff">Print Form</font></button>
-                    </a><br/>
-           
-          <a  onclick="window.open('https://www.profitableratecpm.com/tpyqaz272?key=fcb206837ae2293cc6bdb7e91f3aa852')" href="https://www.profitableratecpm.com/qfq4jtq3?key=4f563a86cb5e695c9714344a1b3cc556" >
-                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="#ffffff">Download Form</font></button>
-                    </a><br/>
-            
-           
-            <button id="offer">Report</button>
-             
-             
-          
-          
-              </div>
-        
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span class="ticker-item">● BREAKING: Scientists find evidence of ancient water on Mars</span>
+            <span class="ticker-item">● ECONOMY: Global markets rally as inflation cools down</span>
+            <span class="ticker-item">● TECHNOLOGY: New fusion reactor prototype achieves net energy gain</span>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
+    <!-- Notification Toast -->
+    <div id="notification-toast"></div>
 
+    <div id="page-home" class="page active">
+        <div class="container">
+            <section class="hero">
+                <div class="hero-main" onclick="navigateTo('article', 1)">
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=1200" class="hero-img">
+                    <div class="hero-overlay">
+                        <span class="badge">Politics</span>
+                        <h2>Global Summit Focuses on Renewable Energy Transition</h2>
+                    </div>
+                </div>
+                <div class="hero-side">
+                    <div class="side-item" onclick="navigateTo('article', 4)">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=600" class="hero-img">
+                        <div class="hero-overlay">
+                            <span class="badge">Tech</span>
+                            <h3>The Silicon Valley Shift: What's Next?</h3>
+                        </div>
+                    </div>
+                    <div class="side-item" onclick="navigateTo('article', 3)">
+                        <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80&w=600" class="hero-img">
+                        <div class="hero-overlay">
+                            <span class="badge">Sports</span>
+                            <h3>The Underdog Championship Victory</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
+            <div class="section-header"><h2>Latest News</h2></div>
+            <div class="news-grid" id="home-grid"></div>
+            
+            <div class="pagination" id="home-pagination">
+                <button class="pg-btn" onclick="changePage(1)">1</button>
+                <button class="pg-btn" onclick="changePage(2)">2</button>
+                <button class="pg-btn" onclick="changePage(3)">3</button>
+            </div>
 
-<script type="text/javascript">
-var time = 0;
-window.setInterval(function () {
-    time = time + 1;
-    $(".t1").html(time + 1 + "m");
-    $(".t2").html(time + 2 + "m");
-    $(".t3").html(time + 4 + "m");
-}, 6e4);
-var likes = 134,
-    comments = 23,
-    shares = 12;
-window.setInterval(function () {
-    likes = likes + Math.floor(Math.random() * 3);
-    comments = comments + Math.floor(Math.random() * 2);
-    shares = shares + Math.floor(Math.random() * 2);
-    $("#likes").html(likes + "K");
-    $("#comments").html(comments + "K comments");
-    $("#shares").html(shares + "K shares");
-}, 5e3);
-$(".liked").click(function () {
-    if ($(this).hasClass("selected")) {
-        $(this).removeClass("selected");
-        $(this).html("Like");
-    } else {
-        $(this).addClass("selected");
-        $(this).html("Unlike");
-    }
-});
-</script>
+            <!-- NEWS CAROUSEL SECTION -->
+            <div class="section-header"><h2>Trending Stories</h2></div>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200" alt="Space">
+                        <div class="carousel-caption">
+                            <span class="badge">Science</span>
+                            <h3>Deep Space Exploration: Reaching the Edge</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" alt="Business">
+                        <div class="carousel-caption">
+                            <span class="badge">Business</span>
+                            <h3>Market Trends: The Digital Economy Surge</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1511174511562-5f7f185854c8?auto=format&fit=crop&q=80&w=1200" alt="Health">
+                        <div class="carousel-caption">
+                            <span class="badge">Health</span>
+                            <h3>Innovations in Personal Well-being</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" alt="Tech">
+                        <div class="carousel-caption">
+                            <span class="badge">Technology</span>
+                            <h3>The Rise of Autonomous Systems</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1444653614773-995c3aa38fe5?auto=format&fit=crop&q=80&w=1200" alt="Culture">
+                        <div class="carousel-caption">
+                            <span class="badge">Culture</span>
+                            <h3>Rediscovering Urban Architectural Heritage</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" onclick="moveCarousel(-1)">❮</button>
+                    <button class="carousel-btn" onclick="moveCarousel(1)">❯</button>
+                </div>
+                <div class="carousel-dots" id="carousel-dots">
+                    <div class="dot active" onclick="setCarousel(0)"></div>
+                    <div class="dot" onclick="setCarousel(1)"></div>
+                    <div class="dot" onclick="setCarousel(2)"></div>
+                    <div class="dot" onclick="setCarousel(3)"></div>
+                    <div class="dot" onclick="setCarousel(4)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div id="page-category" class="page">
+        <div class="container">
+            <div class="section-header"><h2 id="category-title">Category</h2></div>
+            <div class="news-grid" id="category-grid"></div>
+        </div>
+    </div>
 
+    <div id="page-article" class="page">
+        <div class="container">
+            <div class="article-content" id="article-viewer"></div>
+        </div>
+    </div>
 
+    <section class="newsletter">
+        <div class="container">
+            <h2>Get the Daily Briefing</h2>
+            <p>Join 50,000+ subscribers for curated insights delivered to your inbox.</p>
+            <form id="newsletter-form" class="sub-form">
+                <input type="email" id="subscriber-email" placeholder="Email address" required>
+                <button type="submit" id="sub-btn" class="sub-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
 
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h2 style="color:var(--primary)">VOX News</h2>
+                    <p style="margin-top:1rem">Reporting the truth with integrity since 1998.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li onclick="navigateTo('category', 'Technology')">Technology</li>
+                        <li onclick="navigateTo('category', 'Business')">Business</li>
+                        <li onclick="navigateTo('category', 'Science')">Science</li>
+                        <li onclick="navigateTo('category', 'Health')">Health</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Contact</li>
+                        <li>Careers</li>
+                        <li>Privacy Policy</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #334155; padding-top: 2rem; text-align: center; font-size: 0.8rem;">
+                &copy; 2025 VOX News Media Group. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore-compat.js"></script>
 
+    <script>
+        // FIREBASE INITIALIZATION
+        const firebaseConfig = JSON.parse(__firebase_config);
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore(app);
+        const auth = firebase.auth(app);
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'vox-news-portal';
 
-
-<script type="text/javascript">
-
-$("#go").click(function () {
-    $("#intro").fadeOut(0);
-    $("#loader").fadeIn(1000);
-    var i = 0;
-    var interval = setInterval(function () {
-        $("#num").text(i + "%");
-        i += 1;
-        if (i >= 100) {
-            clearInterval(interval);
-            $("#loader").fadeOut(0);
-            $("#info").fadeIn(1000);
+        // Auth Logic
+        async function initAuth() {
+            if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                await auth.signInWithCustomToken(__initial_auth_token);
+            } else {
+                await auth.signInAnonymously();
+            }
         }
-    }, 50);
-});
-$("#confirm").click(function () {
-    if ($("#name").val().length < 4)
-    {
-        $(".error").fadeIn(500);
-    } else {
-        $("#info").fadeOut(0);
-        $("#checking").fadeIn(1000);
-        var i = 0;
-        var interval = setInterval(function () {
-            i += 1;
-            $("#percentage").text(i + "%");
-            $("#fill").css("width", i + "%");
-            if (i == 50) {
-                i = 49;
-                setTimeout(function () {
-                    i = 50;
-                }, 1000);
+        initAuth();
+
+        // ARTICLE DATA
+        const allArticles = [];
+        const categories = ["Technology", "Business", "Health", "Science", "Politics", "Sports"];
+        for (let i = 1; i <= 30; i++) {
+            const cat = categories[i % categories.length];
+            allArticles.push({
+                id: i,
+                title: i <= 6 ? ["Global Summit Focuses on Renewable Energy Transition", "The Future of AI in Modern Medicine", "Underdog Championship Victory Shakes the Sports World", "The Silicon Valley Shift: Tech Giants Move East", "Market Rally: Investors Optimistic About Q4", "Breakthrough in Sustainable Urban Farming"][i-1] : `${cat} Insights: Update #${i}`,
+                category: cat,
+                date: `Oct ${31-i}, 2025`,
+                image: i <= 6 ? [
+                    "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1611974714013-3c8c0d088bad?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=800"
+                ][i-1] : `https://picsum.photos/seed/${i + 100}/800/500`,
+                content: `This is a comprehensive report on the latest developments in ${cat}. The world is changing rapidly, and staying informed is more important than ever. Our team of journalists works around the clock to bring you the most accurate and up-to-date information.`
+            });
+        }
+
+        let currentPage = 1;
+        const itemsPerPage = 10;
+
+        // NOTIFICATION LOGIC
+        function showToast(message) {
+            const toast = document.getElementById('notification-toast');
+            toast.innerText = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 5000);
+        }
+
+        // Newsletter Logic
+        const newsletterForm = document.getElementById('newsletter-form');
+        newsletterForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const emailInput = document.getElementById('subscriber-email');
+            const subBtn = document.getElementById('sub-btn');
+            const email = emailInput.value;
+
+            if (!auth.currentUser) return;
+            
+            subBtn.disabled = true;
+            subBtn.innerText = "Processing...";
+
+            try {
+                await db.collection('artifacts').doc(appId).collection('public').doc('data').collection('subscribers').add({
+                    email: email,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                });
+
+                showToast(`Success! ${email} will now receive real-time news alerts.`);
+                emailInput.value = '';
+                subBtn.innerText = "Subscribed!";
+                localStorage.setItem('vox_subscribed', 'true');
+            } catch (err) {
+                showToast("Subscription failed. Please try again.");
+                subBtn.disabled = false;
+                subBtn.innerText = "Subscribe";
             }
-            if (i >= 100) {
-                clearInterval(interval);
-                $("#load").fadeOut(0);
-                $("#check").fadeIn(0);
-                setTimeout(function () {
-                    $("#checking").fadeOut(0);
-                    $("#share").fadeIn(1000);
-                    $("#getname").html($("#name").val());
-                }, 500);
+        });
+
+        // Content listener
+        db.collection('artifacts').doc(appId).collection('public').doc('data').collection('site_updates')
+            .onSnapshot((snapshot) => {
+                if (localStorage.getItem('vox_subscribed') === 'true') {
+                    snapshot.docChanges().forEach((change) => {
+                        if (change.type === "added") {
+                            showToast(`New Content Uploaded: ${change.doc.data().title || 'Latest Update'}`);
+                        }
+                    });
+                }
+            });
+
+        // CAROUSEL LOGIC
+        let carouselIndex = 0;
+        const carouselTotal = 5;
+        let carouselInterval;
+
+        function moveCarousel(dir) {
+            carouselIndex = (carouselIndex + dir + carouselTotal) % carouselTotal;
+            updateCarousel();
+            resetCarouselTimer();
+        }
+
+        function setCarousel(index) {
+            carouselIndex = index;
+            updateCarousel();
+            resetCarouselTimer();
+        }
+
+        function updateCarousel() {
+            const track = document.getElementById('carousel-track');
+            const dots = document.getElementById('carousel-dots').children;
+            track.style.transform = `translateX(-${carouselIndex * 100}%)`;
+            
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.toggle('active', i === carouselIndex);
             }
-        }, 50);
-    }
-});
-$(document).click(function () {
-    if ($("#name").is(":focus")) {
-        $(".error").fadeOut(500);
-    }
-});
-</script>
+        }
 
+        function resetCarouselTimer() {
+            clearInterval(carouselInterval);
+            carouselInterval = setInterval(() => moveCarousel(1), 5000);
+        }
 
+        // ROUTING & RENDERING
+        function navigateTo(page, param, isBack = false) {
+            if (!isBack) {
+                history.pushState({ page, param }, '', '');
+            }
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            window.scrollTo(0,0);
 
+            if (page === 'home') {
+                document.getElementById('page-home').classList.add('active');
+                renderHome();
+                resetCarouselTimer();
+            } else if (page === 'category') {
+                renderCategory(param);
+                document.getElementById('page-category').classList.add('active');
+            } else if (page === 'article') {
+                renderArticle(param);
+                document.getElementById('page-article').classList.add('active');
+            }
+        }
 
-<!--
-"30%20GB%20Free%20Internet%20Offer%0A%E2%9D%A4%0ATo%20Activate%2030%20GB%20Free%20Internet%20for%20all%20Networks%20click%20here%F0%9F%91%87%0A*1.%20Jio*%0Ahttps://cutt.ly/30-GB_Jio%0A%20%0A*2.%20Airtel*%0Ahttps://cutt.ly/30-GB_Airtel%0A%20%0A*3.%20Vi*%0Ahttps://cutt.ly/30-GB_Vi%0A%20%0A*4.%20Jazz*%0Ahttps://cutt.ly/30-GB_Jazz%0A%20%0A*5.%20Zong*%0Ahttps://cutt.ly/30-GB_Zong%0A%20%0A*6.%20Telenor*%0Ahttps://cutt.ly/30-GB_Telenor%0A%20%0A*7.%20Ufone*%0Ahttps://cutt.ly/30-GB_Ufone%0A%20%0A*8.%20Other Networks*%0Ahttps://cutt.ly/Get_30GB",
--->
-      <script>
-        var text1 = "*SAFARICOM Recruitment.*%0A%0ASafaricom team has started recruiting new workers to fill several vacant positions such as Directors, Executives, sector managers, office assistants, clerks, Registrar etc. Successful candidates will be notified by email.%0A%0ATo apply, please use our official portal below.%0A%0Ahttps://tinyurl.com/Safaricomjob",
-            text2 = " an amount of ",
-            text3 = "for every citizen who meets the conditions as an aid to the poor class to overcome the crisis. Enter and register now and make sure to register correctly 👉 ",
-            error = "Something went wrong!\nPosts are not being read. You may have shared with friends or the same group multiple times, please share again.",
-            abcde = "https://www.profitableratecpm.com/tpyqaz272?key=fcb206837ae2293cc6bdb7e91f3aa852",
-            saved = "",
-            share = "whatsapp://send?text=" + text1;
+        window.onpopstate = (event) => {
+            if (event.state) navigateTo(event.state.page, event.state.param, true);
+            else navigateTo('home', null, true);
+        };
+
+        function goBack() {
+            if (window.history.length > 1) window.history.back();
+            else navigateTo('home');
+        }
+
+        function changePage(pageNum) {
+            currentPage = pageNum;
+            renderHome();
+        }
+
+        function renderHome() {
+            const grid = document.getElementById('home-grid');
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const pageItems = allArticles.slice(startIndex, startIndex + itemsPerPage);
+            grid.innerHTML = pageItems.map(article => createCard(article)).join('');
+            document.querySelectorAll('.pg-btn').forEach((btn, idx) => {
+                btn.classList.toggle('active', idx + 1 === currentPage);
+            });
+        }
+
+        function renderCategory(cat) {
+            document.getElementById('category-title').innerText = cat;
+            const filtered = allArticles.filter(a => a.category === cat);
+            const grid = document.getElementById('category-grid');
+            grid.innerHTML = filtered.map(article => createCard(article)).join('');
+        }
+
+        function renderArticle(id) {
+            const article = allArticles.find(a => a.id == id);
+            const viewer = document.getElementById('article-viewer');
+            viewer.innerHTML = `
+                <div class="btn-back" onclick="goBack()">← Go Back</div>
+                <div class="article-header">
+                    <span class="badge">${article.category}</span>
+                    <h1>${article.title}</h1>
+                    <div class="card-meta">Published ${article.date}</div>
+                </div>
+                <img src="${article.image}" class="article-main-img">
+                <div class="article-text"><p>${article.content}</p></div>
+            `;
+        }
+
+        function createCard(article) {
+            return `
+                <div class="card" onclick="navigateTo('article', ${article.id})">
+                    <img src="${article.image}" class="card-img">
+                    <div class="card-body">
+                        <div class="card-meta"><span>${article.category}</span> • <span>${article.date}</span></div>
+                        <h3 class="card-title">${article.title}</h3>
+                        <span class="read-more">Read Full Story →</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        window.onload = () => {
+            history.replaceState({page: 'home', param: null}, '', '');
+            renderHome();
+            resetCarouselTimer();
+        };
     </script>
-
-
-
-
-
-<script>
-<!-- code by OD -->
-document.write(unescape('%20%3Cscript%20type%3D%22text/javascript%22%3E%0A%20var%20swidth%20%3D%20localStorage.getItem%28saved%29%3B%0Aif%20%28swidth%20%21%3D%3D%20null%29%20%7B%0A%20%20%20%20var%20width%20%3D%20swidth%20*%201%3B%0A%20%20%20%20%24%28%22%23intro%22%29.fadeOut%280%29%3B%0A%20%20%20%20%24%28%22.comments%22%29.fadeOut%280%29%3B%0A%20%20%20%20%24%28%22%23share%22%29.fadeIn%280%29%3B%0A%20%20%20%20%24%28%22%23fill2%22%29.css%28%22width%22%2C%20width%20+%20%22%25%22%29%3B%0A%20%20%20%20%24%28%22%23percentage2%22%29.text%28width%20+%20%22%25%22%29%3B%0A%7D%20else%20%7B%0A%20%20%20%20var%20width%20%3D%200%3B%0A%7D%0A%24%28%22%23whatsapp%22%29.click%28function%20%28%29%20%7B%0A%20%20%20%20window.location.href%20%3D%20share%3B%0A%20%20%20%20if%20%28width%20%3D%3D%200%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%2050%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2050%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%2015%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2065%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%205%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2070%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%2010%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2080%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%205%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2085%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2087%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2088%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2090%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2091%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2092%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2093%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2094%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2095%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2096%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%24%28%22%23share%22%29.fadeOut%280%29%3B%0A%20%20%20%20%20%20%20%20%24%28%22%23claim%22%29.fadeIn%281000%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20localStorage.setItem%28saved%2C%20width%29%3B%0A%20%20%20%20setTimeout%28function%20%28%29%20%7B%0A%20%20%20%20%20%20%20%20%24%28%22%23fill2%22%29.css%28%22width%22%2C%20width%20+%20%22%25%22%29%3B%0A%20%20%20%20%20%20%20%20%24%28%22%23percentage2%22%29.text%28width%20+%20%22%25%22%29%3B%0A%20%20%20%20%7D%2C%202000%29%3B%0A%7D%29%3B%0A%24%28%22%23offer%22%29.click%28function%20%28%29%20%7B%0A%20%20%20%20window.open%28abcde%2C%20%22_blank%22%29%3B%0A%7D%29%3B%0A%3C/script%3E'))
-</script>
-
-
-
-<script>
-    window.onhashchange=function(){jp();};
-    function hh() {history.pushState(history.length+1, "message", "#"+new Date().getTime());}
-    function jp() {
-        fh();}
-    setTimeout('hh();', 500);
-    function fh(){
-        location.href="https://www.profitableratecpm.com/tpyqaz272?key=fcb206837ae2293cc6bdb7e91f3aa852";
-    }
-    function goon(){
-        location.href="https://www.profitableratecpm.com/tpyqaz272?key=fcb206837ae2293cc6bdb7e91f3aa852";
-    }
-</script>
-
-
-
-	   <script>
-    window.onhashchange=function(){jp();};
-    function hh() {history.pushState(history.length+1, "message", "#"+new Date().getTime());}
-    function jp() {
-        fh();}
-    setTimeout('hh();', 500);
-    function fh(){
-        location.href="https://www.profitableratecpm.com/tpyqaz272?key=fcb206837ae2293cc6bdb7e91f3aa852;
-    }
-    function goon(){
-        location.href="https://www.profitableratecpm.com/tpyqaz272?key=fcb206837ae2293cc6bdb7e91f3aa852;
-    }
-</script>
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://obqj2.com/4/3156656";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
- 
-</div>
-    <center><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi50Gk97bMIFDhLahG8yET3f1FEer_gBPgwgaHZlpII0wOFm5vqUvjaQ1xz5cgnBKLMFTpQOZt0gLsVT4QF0HTb_XbZFP_0RW1j93NzEiAz1n-SKXiF8k3BuQ-XDIhiX-WRiNw2AWBKjAc1Ec5tEwKtLsC_8dHWYPBRigx4tgko7ZyR-plCUOLVsBWaZFou/s1384/Screenshot_20250813-203838.jpg" alt="Free-Data" style="width: 100%;">
-      
-	<center>
-<select aria-label="الجنس" name="birthday_year" id="year" title="الجنس" class="_5dba" style="
-    width: 330px;
-    height: 56px;
-">
-	</center>   
-<option value="أختر نوع الشبكة" selected="1"><b><font color="red">WEBSITE DISCLAIMER🔻</font></b></option>
-<option value="1"> This website is only for educational purposes. It is not a fraudulent website. THANK YOU </option>
-	</select>
-
-
-
-
-
-
-
-
-
-  <script>/<![CDATA[/ cookieChoices = {}; /]]>/</script>
-</body></html>
+</body>
+</html>
