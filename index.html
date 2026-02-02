@@ -23,7 +23,7 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
         /* Optimized Header */
-        .header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; height: 60px; display: flex; align-items: center; will-change: transform; }
+        .header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; height: 60px; display: flex; align-items: center; }
         .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
         .logo { font-size: 1.5rem; font-weight: 900; color: var(--primary); text-transform: uppercase; cursor: pointer; letter-spacing: -0.5px; }
         .nav-links { display: flex; gap: 1.5rem; list-style: none; }
@@ -41,70 +41,54 @@
         .page.active { display: block; animation: quickFade 0.25s ease-out; }
         @keyframes quickFade { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Hero Optimized */
+        /* Hero Layout */
         .hero { padding: 1.5rem 0; display: grid; grid-template-columns: 1.6fr 1fr; gap: 1rem; }
         .hero-main, .side-item { position: relative; border-radius: 12px; overflow: hidden; cursor: pointer; background: #1e293b; transform: translateZ(0); }
         .hero-main { height: 420px; }
-        .side-item { height: 200px; }
+        .side-item { height: 200px; margin-bottom: 10px; }
         .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: transform 0.4s ease; will-change: transform; }
         .hero-main:hover .hero-img, .side-item:hover .hero-img { transform: scale(1.03); opacity: 0.75; }
         .hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; }
         .badge { background: var(--primary); color: white; padding: 0.2rem 0.5rem; font-size: 0.65rem; font-weight: 800; border-radius: 4px; text-transform: uppercase; margin-bottom: 0.5rem; display: inline-block; }
 
-        /* Grid Performance */
+        /* News Grid Rendering */
         .section-header { margin: 2rem 0 1rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-end; }
         .section-header h2 { font-size: 1.25rem; font-weight: 800; border-bottom: 2px solid var(--primary); margin-bottom: -1px; padding-bottom: 0.4rem; }
-        .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; min-height: 200px; }
         
-        .card { background: white; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); transition: var(--transition); cursor: pointer; display: flex; flex-direction: column; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: #cbd5e1; }
+        .card { background: white; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); transition: var(--transition); cursor: pointer; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
         .card-img { height: 180px; width: 100%; object-fit: cover; background: #e2e8f0; }
         .card-body { padding: 1.2rem; flex-grow: 1; }
-        .card-meta { font-size: 0.7rem; color: var(--gray); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem; }
-        .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; line-height: 1.3; color: var(--dark); }
+        .card-meta { font-size: 0.7rem; color: var(--gray); margin-bottom: 0.4rem; }
+        .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--dark); }
         .read-more { color: var(--primary); font-weight: 700; font-size: 0.8rem; }
 
         .pagination { display: flex; justify-content: center; align-items: center; gap: 0.4rem; margin: 3rem 0; }
-        .pg-btn { width: 36px; height: 36px; border: 1px solid var(--border); background: white; cursor: pointer; font-weight: 600; border-radius: 8px; transition: 0.15s; display: flex; align-items: center; justify-content: center; }
-        .pg-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .pg-btn { width: 36px; height: 36px; border: 1px solid var(--border); background: white; cursor: pointer; font-weight: 600; border-radius: 8px; }
         .pg-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-        /* Faster Carousel */
+        /* Carousel */
         .carousel-container { position: relative; width: 100%; height: 320px; border-radius: 16px; overflow: hidden; margin-top: 1.5rem; background: #000; }
-        .carousel-track { display: flex; height: 100%; transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); will-change: transform; }
+        .carousel-track { display: flex; height: 100%; transition: transform 0.4s ease-out; will-change: transform; }
         .carousel-slide { min-width: 100%; height: 100%; position: relative; }
         .carousel-slide img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; }
         .carousel-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; }
-        .carousel-caption h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.4rem; letter-spacing: -0.5px; }
-        .carousel-btn { background: rgba(255,255,255,0.15); border: none; width: 40px; height: 40px; border-radius: 50%; color: white; cursor: pointer; pointer-events: auto; backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
-        .carousel-btn:hover { background: rgba(255,255,255,0.3); }
-        .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: 0.2s; }
-        .dot.active { background: var(--primary); width: 20px; border-radius: 10px; }
+        
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); border: none; color: white; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; z-index: 10; }
+        .prev { left: 1rem; }
+        .next { right: 1rem; }
 
         .newsletter { background: #0f172a; color: white; padding: 3rem 0; text-align: center; margin-top: 4rem; }
         .sub-form { max-width: 400px; margin: 1.2rem auto 0; display: flex; gap: 8px; }
-        .sub-form input { flex: 1; padding: 0.7rem 1rem; border-radius: 8px; border: 1px solid #1e293b; background: #1e293b; color: white; outline: none; }
-        .sub-btn { background: var(--primary); color: white; border: none; padding: 0.7rem 1.2rem; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s; }
-        
-        #notification-toast {
-            position: fixed; bottom: 20px; right: 20px; background: var(--dark); color: white;
-            padding: 0.8rem 1.2rem; border-radius: 10px; box-shadow: var(--shadow);
-            transform: translateY(200%); transition: transform 0.3s ease; z-index: 10001; font-size: 0.9rem;
-            border-left: 4px solid var(--primary);
-        }
-        #notification-toast.show { transform: translateY(0); }
+        .sub-form input { flex: 1; padding: 0.7rem 1rem; border-radius: 8px; border: none; }
+        .sub-btn { background: var(--primary); color: white; border: none; padding: 0.7rem 1.2rem; border-radius: 8px; font-weight: 700; cursor: pointer; }
 
-        footer { background: #020617; color: #64748b; padding: 3rem 0 1.5rem; font-size: 0.85rem; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
-        .footer-col h4 { color: white; margin-bottom: 1rem; font-size: 0.9rem; }
-        .footer-col li { margin-bottom: 0.4rem; cursor: pointer; }
-        .footer-col li:hover { color: var(--primary); }
+        footer { background: #020617; color: #64748b; padding: 3rem 0 1.5rem; }
 
         @media (max-width: 768px) {
             .hero { grid-template-columns: 1fr; }
-            .header { height: 50px; }
-            .carousel-container { height: 220px; }
-            .carousel-caption h3 { font-size: 1.1rem; }
+            .side-item { height: 180px; }
         }
     </style>
 </head>
@@ -130,13 +114,11 @@
         </div>
     </div>
 
-    <div id="notification-toast"></div>
-
     <div id="page-home" class="page active">
         <div class="container">
             <section class="hero">
                 <div class="hero-main" onclick="navigateTo('article', 1)">
-                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=70&w=1200" class="hero-img" loading="eager">
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=70&w=1200" class="hero-img">
                     <div class="hero-overlay">
                         <span class="badge">Politics</span>
                         <h2>Global Summit Focuses on Renewable Energy Transition</h2>
@@ -144,14 +126,14 @@
                 </div>
                 <div class="hero-side">
                     <div class="side-item" onclick="navigateTo('article', 4)">
-                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=70&w=600" class="hero-img" loading="eager">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=70&w=600" class="hero-img">
                         <div class="hero-overlay">
                             <span class="badge">Tech</span>
                             <h3>The Silicon Valley Shift: What's Next?</h3>
                         </div>
                     </div>
                     <div class="side-item" onclick="navigateTo('article', 3)">
-                        <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=70&w=600" class="hero-img" loading="eager">
+                        <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=70&w=600" class="hero-img">
                         <div class="hero-overlay">
                             <span class="badge">Sports</span>
                             <h3>The Underdog Championship Victory</h3>
@@ -161,16 +143,20 @@
             </section>
 
             <div class="section-header"><h2>Latest News</h2></div>
-            <div class="news-grid" id="home-grid"></div>
+            <div class="news-grid" id="home-grid">
+                <!-- News will be injected here by JS -->
+            </div>
             
             <div class="pagination" id="home-pagination">
-                <button class="pg-btn" onclick="changePage(1)">1</button>
+                <button class="pg-btn active" onclick="changePage(1)">1</button>
                 <button class="pg-btn" onclick="changePage(2)">2</button>
                 <button class="pg-btn" onclick="changePage(3)">3</button>
             </div>
 
             <div class="section-header"><h2>Trending Stories</h2></div>
             <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="moveCarousel(-1)">❮</button>
+                <button class="carousel-btn next" onclick="moveCarousel(1)">❯</button>
                 <div class="carousel-track" id="carousel-track">
                     <div class="carousel-slide">
                         <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=70&w=1200" alt="Space">
@@ -186,38 +172,6 @@
                             <h3>Market Trends: The Digital Economy Surge</h3>
                         </div>
                     </div>
-                    <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1511174511562-5f7f185854c8?auto=format&fit=crop&q=70&w=1200" alt="Health">
-                        <div class="carousel-caption">
-                            <span class="badge">Health</span>
-                            <h3>Innovations in Personal Well-being</h3>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=70&w=1200" alt="Tech">
-                        <div class="carousel-caption">
-                            <span class="badge">Technology</span>
-                            <h3>The Rise of Autonomous Systems</h3>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1444653614773-995c3aa38fe5?auto=format&fit=crop&q=70&w=1200" alt="Culture">
-                        <div class="carousel-caption">
-                            <span class="badge">Culture</span>
-                            <h3>Rediscovering Urban Heritage</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-nav" style="position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; padding: 0 1rem; transform: translateY(-50%); pointer-events: none;">
-                    <button class="carousel-btn" onclick="moveCarousel(-1)">❮</button>
-                    <button class="carousel-btn" onclick="moveCarousel(1)">❯</button>
-                </div>
-                <div class="carousel-dots" id="carousel-dots">
-                    <div class="dot active" onclick="setCarousel(0)"></div>
-                    <div class="dot" onclick="setCarousel(1)"></div>
-                    <div class="dot" onclick="setCarousel(2)"></div>
-                    <div class="dot" onclick="setCarousel(3)"></div>
-                    <div class="dot" onclick="setCarousel(4)"></div>
                 </div>
             </div>
         </div>
@@ -239,178 +193,105 @@
     <section class="newsletter">
         <div class="container">
             <h3>The Daily Briefing</h3>
-            <p style="font-size: 0.9rem; opacity: 0.8;">Join 50,000+ subscribers.</p>
-            <form id="newsletter-form" class="sub-form">
-                <input type="email" id="subscriber-email" placeholder="Email address" required>
-                <button type="submit" id="sub-btn" class="sub-btn">Join</button>
+            <p>Join 50,000+ subscribers for the latest updates.</p>
+            <form class="sub-form">
+                <input type="email" placeholder="Email address" required>
+                <button type="submit" class="sub-btn">Join</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3 style="color:var(--primary)">VOX News</h3>
-                    <p style="margin-top:0.5rem">Integrity in reporting since 1998.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Categories</h4>
-                    <ul>
-                        <li onclick="navigateTo('category', 'Technology')">Tech</li>
-                        <li onclick="navigateTo('category', 'Business')">Business</li>
-                        <li onclick="navigateTo('category', 'Science')">Science</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li>Privacy</li>
-                        <li>Terms</li>
-                    </ul>
-                </div>
-            </div>
-            <div style="border-top: 1px solid #1e293b; padding-top: 1.5rem; text-align: center; font-size: 0.75rem; color: #475569;">
-                &copy; 2026 VOX News Media Group.
-            </div>
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2026 VOX News Media Group. High Performance Build.</p>
         </div>
     </footer>
 
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore-compat.js"></script>
-
     <script>
-        // CORE INITIALIZATION
-        const firebaseConfig = JSON.parse(__firebase_config);
-        const app = firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore(app);
-        const auth = firebase.auth(app);
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'vox-news-portal';
-
-        // Optimized Auth
-        async function initAuth() {
-            try {
-                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    await auth.signInWithCustomToken(__initial_auth_token);
-                } else {
-                    await auth.signInAnonymously();
-                }
-            } catch (e) { console.error("Auth failed", e); }
-        }
-        initAuth();
-
-        // Optimized Article Generation (Static for speed, dynamic metadata)
+        // DATA
         const categories = ["Technology", "Business", "Health", "Science", "Politics", "Sports"];
         const allArticles = Array.from({length: 30}, (_, i) => {
             const id = i + 1;
             const cat = categories[id % categories.length];
             return {
                 id,
-                title: id <= 6 ? [
-                    "Global Summit Focuses on Renewable Energy Transition",
-                    "The Future of AI in Modern Medicine",
-                    "Underdog Championship Victory Shakes the Sports World",
-                    "The Silicon Valley Shift: Tech Giants Move East",
-                    "Market Rally: Investors Optimistic About Q4",
-                    "Breakthrough in Sustainable Urban Farming"
-                ][id-1] : `${cat} Insights: Update #${id}`,
+                title: `${cat} Update: Essential Briefing #${id}`,
                 category: cat,
                 date: `Oct ${31-id}, 2025`,
-                image: id <= 6 ? [
-                    "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=70&w=800",
-                    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=70&w=800",
-                    "https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=70&w=800",
-                    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=70&w=800",
-                    "https://images.unsplash.com/photo-1611974714013-3c8c0d088bad?auto=format&fit=crop&q=70&w=800",
-                    "https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=70&w=800"
-                ][id-1] : `https://picsum.photos/seed/${id}/600/400`,
-                content: "Detailed report content here..."
+                image: `https://picsum.photos/seed/${id + 100}/600/400`,
+                content: "Complete coverage of the latest developments in this sector..."
             };
         });
 
         let currentPage = 1;
-        const itemsPerPage = 10;
+        const itemsPerPage = 8;
 
-        function showToast(message) {
-            const toast = document.getElementById('notification-toast');
-            toast.innerText = message;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 4000);
-        }
-
-        // CAROUSEL OPTIMIZED
-        let carouselIndex = 0;
-        let carouselInterval;
-        function moveCarousel(dir) {
-            carouselIndex = (carouselIndex + dir + 5) % 5;
-            const track = document.getElementById('carousel-track');
-            const dots = document.getElementById('carousel-dots').children;
-            track.style.transform = `translate3d(-${carouselIndex * 100}%, 0, 0)`;
-            Array.from(dots).forEach((dot, i) => dot.classList.toggle('active', i === carouselIndex));
-            resetCarouselTimer();
-        }
-        function setCarousel(index) {
-            carouselIndex = index;
-            moveCarousel(0);
-        }
-        function resetCarouselTimer() {
-            clearInterval(carouselInterval);
-            carouselInterval = setInterval(() => moveCarousel(1), 5000);
-        }
-
-        // NAVIGATION & RENDERING
-        function navigateTo(page, param, isBack = false) {
-            if (!isBack) history.pushState({ page, param }, '', '');
+        // NAVIGATION
+        function navigateTo(page, param) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            window.scrollTo({top: 0, behavior: 'auto'}); // Immediate for speed
+            window.scrollTo(0, 0);
 
-            const pageMap = {
-                'home': () => { document.getElementById('page-home').classList.add('active'); renderHome(); resetCarouselTimer(); },
-                'category': () => { renderCategory(param); document.getElementById('page-category').classList.add('active'); },
-                'article': () => { renderArticle(param); document.getElementById('page-article').classList.add('active'); }
-            };
-            if(pageMap[page]) pageMap[page]();
+            if (page === 'home') {
+                document.getElementById('page-home').classList.add('active');
+                renderHome();
+            } else if (page === 'category') {
+                document.getElementById('category-title').innerText = param;
+                document.getElementById('page-category').classList.add('active');
+                renderCategory(param);
+            } else if (page === 'article') {
+                document.getElementById('page-article').classList.add('active');
+                renderArticle(param);
+            }
         }
 
+        // RENDERING (Fixed for latest news visibility)
         function renderHome() {
             const grid = document.getElementById('home-grid');
-            const startIndex = (currentPage - 1) * itemsPerPage;
-            const items = allArticles.slice(startIndex, startIndex + itemsPerPage);
-            grid.innerHTML = items.map(a => createCard(a)).join('');
-            document.querySelectorAll('.pg-btn').forEach((btn, i) => btn.classList.toggle('active', i + 1 === currentPage));
+            if (!grid) return;
+            
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const items = allArticles.slice(start, end);
+            
+            grid.innerHTML = items.map(a => `
+                <div class="card" onclick="navigateTo('article', ${a.id})">
+                    <img src="${a.image}" class="card-img" loading="lazy">
+                    <div class="card-body">
+                        <div class="card-meta">${a.category} • ${a.date}</div>
+                        <h3 class="card-title">${a.title}</h3>
+                        <span class="read-more">Read More →</span>
+                    </div>
+                </div>
+            `).join('');
+
+            document.querySelectorAll('.pg-btn').forEach((btn, i) => {
+                btn.classList.toggle('active', (i + 1) === currentPage);
+            });
         }
 
         function renderCategory(cat) {
-            document.getElementById('category-title').innerText = cat;
+            const grid = document.getElementById('category-grid');
             const filtered = allArticles.filter(a => a.category === cat);
-            document.getElementById('category-grid').innerHTML = filtered.map(a => createCard(a)).join('');
+            grid.innerHTML = filtered.map(a => `
+                <div class="card" onclick="navigateTo('article', ${a.id})">
+                    <img src="${a.image}" class="card-img">
+                    <div class="card-body">
+                        <div class="card-meta">${a.category} • ${a.date}</div>
+                        <h3 class="card-title">${a.title}</h3>
+                        <span class="read-more">Read More →</span>
+                    </div>
+                </div>
+            `).join('');
         }
 
         function renderArticle(id) {
             const a = allArticles.find(x => x.id == id);
             document.getElementById('article-viewer').innerHTML = `
-                <div style="cursor:pointer; color:var(--primary); font-weight:700; margin-bottom:1rem;" onclick="history.back()">← Back</div>
+                <div style="cursor:pointer; color:var(--primary); font-weight:700; margin-bottom:1rem;" onclick="navigateTo('home')">← Back Home</div>
                 <span class="badge">${a.category}</span>
-                <h1 style="font-size: 2rem; margin: 0.5rem 0;">${a.title}</h1>
-                <p style="color:var(--gray); font-size:0.8rem;">Published ${a.date}</p>
-                <img src="${a.image}" style="width:100%; border-radius:12px; margin: 1.5rem 0; aspect-ratio:16/9; object-fit:cover;">
-                <div style="line-height:1.7; color:#334155;">${a.content}</div>
-            `;
-        }
-
-        function createCard(a) {
-            // Using 'lazy' for grid images to speed up initial paint
-            return `
-                <div class="card" onclick="navigateTo('article', ${a.id})">
-                    <img src="${a.image}" class="card-img" loading="lazy">
-                    <div class="card-body">
-                        <div class="card-meta"><span>${a.category}</span> • <span>${a.date}</span></div>
-                        <h3 class="card-title">${a.title}</h3>
-                        <span class="read-more">Read More →</span>
-                    </div>
-                </div>
+                <h1>${a.title}</h1>
+                <img src="${a.image}" style="width:100%; border-radius:12px; margin: 1.5rem 0;">
+                <p>${a.content}</p>
             `;
         }
 
@@ -419,14 +300,18 @@
             renderHome();
         }
 
-        window.onpopstate = (e) => navigateTo(e.state?.page || 'home', e.state?.param, true);
-        
-        window.onload = () => {
+        // CAROUSEL
+        let curSlide = 0;
+        function moveCarousel(dir) {
+            curSlide = (curSlide + dir + 2) % 2;
+            document.getElementById('carousel-track').style.transform = `translate3d(-${curSlide * 100}%, 0, 0)`;
+        }
+
+        // Initial Load
+        window.addEventListener('DOMContentLoaded', () => {
             renderHome();
-            resetCarouselTimer();
-            // Ticker delay start for better main thread priority
-            setTimeout(() => document.querySelector('.ticker').style.animationPlayState = 'running', 100);
-        };
+            setInterval(() => moveCarousel(1), 5000);
+        });
     </script>
 </body>
 </html>
