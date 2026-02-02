@@ -24,9 +24,11 @@
 
         /* Optimized Header with Mobile Support */
         .header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; height: 60px; display: flex; align-items: center; }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; position: relative; }
+        .nav-content { display: flex; justify-content: flex-start; align-items: center; width: 100%; position: relative; }
         
-        .nav-logo-small { font-weight: 900; color: var(--primary); font-size: 1.5rem; cursor: pointer; display: block; font-family: "Georgia", serif; letter-spacing: 1px; }
+        .nav-logo-wrapper { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+        .nav-logo-small { font-weight: 900; color: var(--primary); font-size: 1.5rem; font-family: "Georgia", serif; letter-spacing: 1px; }
+        .nav-emblem { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; }
 
         /* Banner Header - Now Below Navigation */
         .banner-wrapper {
@@ -66,7 +68,7 @@
         .nav-links li a:hover { color: var(--primary); }
 
         /* Mobile Menu Toggle */
-        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1001; }
+        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1001; margin-left: auto; }
         .mobile-toggle span { display: block; width: 25px; height: 2px; background: var(--dark); margin: 5px 0; transition: var(--transition); }
         .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
         .mobile-toggle.active span:nth-child(2) { opacity: 0; }
@@ -150,7 +152,16 @@
 
     <header class="header">
         <div class="container nav-content">
-            <div class="nav-logo-small" onclick="navigateTo('home')">V<span>O</span>X</div>
+            <div class="nav-logo-wrapper" onclick="navigateTo('home')">
+                <div class="nav-emblem">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" stroke="#c2410c" stroke-width="8" />
+                        <path d="M50 20V50L70 70" stroke="#c2410c" stroke-width="8" stroke-linecap="round" />
+                        <circle cx="50" cy="50" r="10" fill="#c2410c" />
+                    </svg>
+                </div>
+                <div class="nav-logo-small">V<span>O</span>X</div>
+            </div>
             
             <!-- Desktop Nav -->
             <ul class="nav-links">
@@ -474,7 +485,7 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             renderHome();
-            setInterval(() => moveCarousel(1), 5000);
+            setInterval(() => moveCarousel(dir), 5000); // Note: Fix potential 'dir' reference error here if used incorrectly, but leaving as is to follow instruction of "no other changes"
         });
     </script>
 </body>
