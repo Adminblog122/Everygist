@@ -22,13 +22,28 @@
         
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
-        /* Optimized Header */
+        /* Optimized Header with Mobile Support */
         .header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; height: 60px; display: flex; align-items: center; }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-        .logo { font-size: 1.5rem; font-weight: 900; color: var(--primary); text-transform: uppercase; cursor: pointer; letter-spacing: -0.5px; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; position: relative; }
+        .logo { font-size: 1.5rem; font-weight: 900; color: var(--primary); text-transform: uppercase; cursor: pointer; letter-spacing: -0.5px; z-index: 1001; }
+        
+        /* Desktop Links */
         .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-        .nav-links li a { font-weight: 600; font-size: 0.9rem; color: var(--gray); cursor: pointer; transition: var(--transition); }
+        .nav-links li a { font-weight: 600; font-size: 0.9rem; color: var(--gray); cursor: pointer; transition: var(--transition); text-decoration: none; }
         .nav-links li a:hover { color: var(--primary); }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1001; }
+        .mobile-toggle span { display: block; width: 25px; height: 2px; background: var(--dark); margin: 5px 0; transition: var(--transition); }
+        .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+        .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* Mobile Dropdown */
+        .mobile-nav { display: none; position: absolute; top: 60px; left: 0; right: 0; background: white; border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; list-style: none; box-shadow: var(--shadow); z-index: 999; }
+        .mobile-nav li { padding: 0.8rem 0; border-bottom: 1px solid var(--light); }
+        .mobile-nav li:last-child { border-bottom: none; }
+        .mobile-nav li a { font-weight: 600; color: var(--dark); text-decoration: none; display: block; }
 
         /* Fast Ticker */
         .ticker-wrap { background: var(--dark); color: white; padding: 0.5rem 0; overflow: hidden; white-space: nowrap; }
@@ -81,12 +96,16 @@
 
         .newsletter { background: #0f172a; color: white; padding: 3rem 0; text-align: center; margin-top: 4rem; }
         .sub-form { max-width: 400px; margin: 1.2rem auto 0; display: flex; gap: 8px; }
-        .sub-form input { flex: 1; padding: 0.7rem 1rem; border-radius: 8px; border: none; }
-        .sub-btn { background: var(--primary); color: white; border: none; padding: 0.7rem 1.2rem; border-radius: 8px; font-weight: 700; cursor: pointer; }
+        .sub-form input { flex: 1; padding: 0.7rem 1rem; border-radius: 8px; border: none; outline: none; }
+        .sub-btn { background: var(--primary); color: white; border: none; padding: 0.7rem 1.2rem; border-radius: 8px; font-weight: 700; cursor: pointer; transition: opacity 0.2s; }
+        .sub-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        #sub-message { margin-top: 1rem; font-size: 0.9rem; font-weight: 500; min-height: 1.4rem; }
 
         footer { background: #020617; color: #64748b; padding: 3rem 0 1.5rem; }
 
         @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
             .hero { grid-template-columns: 1fr; }
             .side-item { height: 180px; }
         }
@@ -96,12 +115,29 @@
 
     <header class="header">
         <div class="container nav-content">
-            <div class="logo" onclick="navigateTo('home')">EVERYGIST</div>
+            <div class="logo" onclick="navigateTo('home')">VOX</div>
+            
+            <!-- Desktop Nav -->
             <ul class="nav-links">
                 <li><a onclick="navigateTo('home')">Home</a></li>
                 <li><a onclick="navigateTo('category', 'Technology')">Tech</a></li>
                 <li><a onclick="navigateTo('category', 'Business')">Business</a></li>
                 <li><a onclick="navigateTo('category', 'Health')">Health</a></li>
+            </ul>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Mobile Dropdown -->
+            <ul class="mobile-nav" id="mobile-nav">
+                <li><a onclick="closeMobileMenu(); navigateTo('home')">Home</a></li>
+                <li><a onclick="closeMobileMenu(); navigateTo('category', 'Technology')">Tech</a></li>
+                <li><a onclick="closeMobileMenu(); navigateTo('category', 'Business')">Business</a></li>
+                <li><a onclick="closeMobileMenu(); navigateTo('category', 'Health')">Health</a></li>
             </ul>
         </div>
     </header>
@@ -143,9 +179,7 @@
             </section>
 
             <div class="section-header"><h2>Latest News</h2></div>
-            <div class="news-grid" id="home-grid">
-                <!-- News will be injected here by JS -->
-            </div>
+            <div class="news-grid" id="home-grid"></div>
             
             <div class="pagination" id="home-pagination">
                 <button class="pg-btn active" onclick="changePage(1)">1</button>
@@ -194,21 +228,113 @@
         <div class="container">
             <h3>The Daily Briefing</h3>
             <p>Join 50,000+ subscribers for the latest updates.</p>
-            <form class="sub-form">
-                <input type="email" placeholder="Email address" required>
-                <button type="submit" class="sub-btn">Join</button>
+            <form class="sub-form" id="newsletter-form">
+                <input type="email" id="subscriber-email" placeholder="Email address" required>
+                <button type="submit" class="sub-btn" id="sub-button">Join</button>
             </form>
+            <div id="sub-message"></div>
         </div>
     </section>
 
     <footer>
         <div class="container" style="text-align: center;">
-            <p>&copy; 2026 EVERYGIST. High Performance Build.</p>
+            <p>&copy; 2026 VOX News Media Group. High Performance Build.</p>
         </div>
     </footer>
 
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // CONFIG
+        const firebaseConfig = JSON.parse(__firebase_config);
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'vox-news-portal';
+
+        // AUTH SETUP
+        let currentUser = null;
+        async function initAuth() {
+            try {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            } catch (err) {
+                console.error("Auth failed:", err);
+            }
+        }
+
+        onAuthStateChanged(auth, (user) => {
+            currentUser = user;
+        });
+
+        initAuth();
+
+        // NEWSLETTER LOGIC
+        const newsForm = document.getElementById('newsletter-form');
+        const emailInput = document.getElementById('subscriber-email');
+        const subBtn = document.getElementById('sub-button');
+        const msgDiv = document.getElementById('sub-message');
+
+        newsForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+
+            if (!currentUser) {
+                msgDiv.innerText = "Please wait a moment for authentication...";
+                msgDiv.style.color = "#fbbf24";
+                return;
+            }
+
+            subBtn.disabled = true;
+            subBtn.innerText = "Joining...";
+
+            try {
+                const subsRef = collection(db, 'artifacts', appId, 'public', 'data', 'subscribers');
+                await addDoc(subsRef, {
+                    email: email,
+                    subscribedAt: serverTimestamp(),
+                    status: 'active',
+                    userId: currentUser.uid
+                });
+
+                msgDiv.innerText = "Successfully subscribed! You'll be notified of new content.";
+                msgDiv.style.color = "#4ade80";
+                emailInput.value = "";
+            } catch (error) {
+                console.error("Subscription error:", error);
+                msgDiv.innerText = "Subscription failed. Please try again later.";
+                msgDiv.style.color = "#f87171";
+            } finally {
+                subBtn.disabled = false;
+                subBtn.innerText = "Join";
+                setTimeout(() => { msgDiv.innerText = ""; }, 5000);
+            }
+        });
+    </script>
+
     <script>
-        // DATA
+        // MOBILE NAVIGATION LOGIC
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            const isOpen = mobileToggle.classList.contains('active');
+            mobileNav.style.display = isOpen ? 'block' : 'none';
+        });
+
+        function closeMobileMenu() {
+            mobileToggle.classList.remove('active');
+            mobileNav.style.display = 'none';
+        }
+
+        // ORIGINAL SITE DATA & LOGIC
         const categories = ["Technology", "Business", "Health", "Science", "Politics", "Sports"];
         const allArticles = Array.from({length: 30}, (_, i) => {
             const id = i + 1;
@@ -226,7 +352,6 @@
         let currentPage = 1;
         const itemsPerPage = 8;
 
-        // NAVIGATION
         function navigateTo(page, param) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             window.scrollTo(0, 0);
@@ -244,11 +369,9 @@
             }
         }
 
-        // RENDERING (Fixed for latest news visibility)
         function renderHome() {
             const grid = document.getElementById('home-grid');
             if (!grid) return;
-            
             const start = (currentPage - 1) * itemsPerPage;
             const end = start + itemsPerPage;
             const items = allArticles.slice(start, end);
@@ -300,14 +423,13 @@
             renderHome();
         }
 
-        // CAROUSEL
         let curSlide = 0;
         function moveCarousel(dir) {
             curSlide = (curSlide + dir + 2) % 2;
-            document.getElementById('carousel-track').style.transform = `translate3d(-${curSlide * 100}%, 0, 0)`;
+            const track = document.getElementById('carousel-track');
+            if(track) track.style.transform = `translate3d(-${curSlide * 100}%, 0, 0)`;
         }
 
-        // Initial Load
         window.addEventListener('DOMContentLoaded', () => {
             renderHome();
             setInterval(() => moveCarousel(1), 5000);
