@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVERYGIST | High Performance Portal</title>
+    <title>VOX News | High Performance Portal</title>
     <style>
         :root {
             --primary: #c2410c; 
@@ -23,13 +23,46 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
         /* Optimized Header with Mobile Support */
-        .header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; height: 60px; display: flex; align-items: center; }
+        .header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; height: 60px; display: flex; align-items: center; }
         .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; position: relative; }
-        .logo { font-size: 1.5rem; font-weight: 900; color: var(--primary); text-transform: uppercase; cursor: pointer; letter-spacing: -0.5px; z-index: 1001; }
         
+        .nav-logo-small { font-weight: 900; color: var(--primary); font-size: 1.5rem; cursor: pointer; display: block; font-family: "Georgia", serif; letter-spacing: 1px; }
+
+        /* Banner Header - Now Below Navigation */
+        .banner-wrapper {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+        }
+
+        /* Enhanced Logo */
+        .logo { 
+            font-family: "Georgia", serif;
+            font-size: 4rem; 
+            font-weight: 900; 
+            color: var(--white); 
+            text-transform: uppercase; 
+            cursor: pointer; 
+            letter-spacing: 6px; 
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span { color: var(--primary); }
+        .logo-tagline { font-size: 0.85rem; letter-spacing: 6px; text-transform: uppercase; opacity: 0.9; margin-top: -5px; font-weight: 600; text-shadow: 1px 1px 4px rgba(0,0,0,0.5); }
+
         /* Desktop Links */
-        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-        .nav-links li a { font-weight: 600; font-size: 0.9rem; color: var(--gray); cursor: pointer; transition: var(--transition); text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; margin-left: auto; margin-right: 2rem; }
+        .nav-links li a { font-weight: 700; font-size: 0.85rem; color: var(--dark); cursor: pointer; transition: var(--transition); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
         .nav-links li a:hover { color: var(--primary); }
 
         /* Mobile Menu Toggle */
@@ -108,6 +141,8 @@
             .mobile-toggle { display: block; }
             .hero { grid-template-columns: 1fr; }
             .side-item { height: 180px; }
+            .banner-wrapper { height: 160px; }
+            .logo { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -115,14 +150,15 @@
 
     <header class="header">
         <div class="container nav-content">
-            <div class="logo" onclick="navigateTo('home')">EVERYGIST</div>
+            <div class="nav-logo-small" onclick="navigateTo('home')">V<span>O</span>X</div>
             
             <!-- Desktop Nav -->
             <ul class="nav-links">
                 <li><a onclick="navigateTo('home')">Home</a></li>
-                <li><a onclick="navigateTo('category', 'Technology')">Tech</a></li>
+                <li><a onclick="navigateTo('category', 'Technology')">Technology</a></li>
                 <li><a onclick="navigateTo('category', 'Business')">Business</a></li>
                 <li><a onclick="navigateTo('category', 'Health')">Health</a></li>
+                <li><a onclick="navigateTo('category', 'Science')">Science</a></li>
             </ul>
 
             <!-- Mobile Toggle -->
@@ -142,6 +178,12 @@
         </div>
     </header>
 
+    <!-- Banner Section Below Header -->
+    <div class="banner-wrapper">
+        <div class="logo" onclick="navigateTo('home')">V<span>O</span>X</div>
+        <div class="logo-tagline">Truth in Journalism</div>
+    </div>
+
     <div class="ticker-wrap">
         <div class="ticker">
             <span class="ticker-item">● BREAKING: Scientists find evidence of ancient water on Mars</span>
@@ -154,7 +196,7 @@
         <div class="container">
             <section class="hero">
                 <div class="hero-main" onclick="navigateTo('article', 1)">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGR_inevPdjwuYi32eD6gQeSpbGCLmO3xZWmxm7qzoy-9YuJXr_Z5SYzPjXNH5bccYE10Hyy-byLUC1p_8A8lV6jXLBolUo8LGQISg3vQtgLmip4sC_4RRltkAvGTN_xZgk_XLg1LqxwqLO9DVDRXHIUA1Xqj8epVQDGvuo55QHWRigeh9S3qom6uCsyE/s320/WhatsApp%20Image%202026-02-02%20at%204.52.18%20PM.jpeg" class="hero-img">
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=70&w=1200" class="hero-img">
                     <div class="hero-overlay">
                         <span class="badge">Politics</span>
                         <h2>Global Summit Focuses on Renewable Energy Transition</h2>
