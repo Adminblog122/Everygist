@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOX News | Complete Portal</title>
+    <title>VOX News | High Performance Portal</title>
     <style>
         :root {
             --primary: #c2410c; 
@@ -12,124 +12,99 @@
             --gray: #64748b;
             --border: #e2e8f0;
             --white: #ffffff;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        /* Performance Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        body { font-family: system-ui, -apple-system, sans-serif; background-color: var(--light); color: var(--dark); line-height: 1.5; overflow-x: hidden; }
         
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
-        /* Navigation */
-        .header { background: white; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; height: 70px; display: flex; align-items: center; }
+        /* Optimized Header */
+        .header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; height: 60px; display: flex; align-items: center; will-change: transform; }
         .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-        .logo { font-size: 1.6rem; font-weight: 900; color: var(--primary); text-transform: uppercase; cursor: pointer; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links li a { font-weight: 600; font-size: 0.95rem; color: var(--gray); cursor: pointer; transition: var(--transition); }
+        .logo { font-size: 1.5rem; font-weight: 900; color: var(--primary); text-transform: uppercase; cursor: pointer; letter-spacing: -0.5px; }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-links li a { font-weight: 600; font-size: 0.9rem; color: var(--gray); cursor: pointer; transition: var(--transition); }
         .nav-links li a:hover { color: var(--primary); }
 
-        /* Ticker */
-        .ticker-wrap { background: var(--dark); color: white; padding: 0.6rem 0; overflow: hidden; white-space: nowrap; }
-        .ticker { display: inline-block; animation: ticker 40s linear infinite; }
-        .ticker-item { padding: 0 2rem; font-size: 0.85rem; font-weight: 500; }
-        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        /* Fast Ticker */
+        .ticker-wrap { background: var(--dark); color: white; padding: 0.5rem 0; overflow: hidden; white-space: nowrap; }
+        .ticker { display: inline-block; animation: ticker 30s linear infinite; will-change: transform; }
+        .ticker-item { padding: 0 2rem; font-size: 0.8rem; font-weight: 500; opacity: 0.9; }
+        @keyframes ticker { 0% { transform: translate3d(100%, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
 
-        /* Routing */
-        .page { display: none; padding-bottom: 4rem; animation: fadeIn 0.4s ease; }
-        .page.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        /* Page Transitions */
+        .page { display: none; padding-bottom: 3rem; }
+        .page.active { display: block; animation: quickFade 0.25s ease-out; }
+        @keyframes quickFade { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Hero Layout */
-        .hero { padding: 2rem 0; display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; }
-        .hero-main { position: relative; height: 450px; border-radius: 12px; overflow: hidden; cursor: pointer; background: #000; }
-        .hero-side { display: flex; flex-direction: column; gap: 1.5rem; }
-        .side-item { position: relative; height: 210px; border-radius: 12px; overflow: hidden; cursor: pointer; background: #000; }
-        .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: var(--transition); }
-        .hero-main:hover .hero-img, .side-item:hover .hero-img { transform: scale(1.05); opacity: 0.6; }
-        .hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: white; }
-        .badge { background: var(--primary); color: white; padding: 0.2rem 0.6rem; font-size: 0.7rem; font-weight: 800; border-radius: 4px; text-transform: uppercase; margin-bottom: 0.8rem; display: inline-block; }
+        /* Hero Optimized */
+        .hero { padding: 1.5rem 0; display: grid; grid-template-columns: 1.6fr 1fr; gap: 1rem; }
+        .hero-main, .side-item { position: relative; border-radius: 12px; overflow: hidden; cursor: pointer; background: #1e293b; transform: translateZ(0); }
+        .hero-main { height: 420px; }
+        .side-item { height: 200px; }
+        .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: transform 0.4s ease; will-change: transform; }
+        .hero-main:hover .hero-img, .side-item:hover .hero-img { transform: scale(1.03); opacity: 0.75; }
+        .hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; }
+        .badge { background: var(--primary); color: white; padding: 0.2rem 0.5rem; font-size: 0.65rem; font-weight: 800; border-radius: 4px; text-transform: uppercase; margin-bottom: 0.5rem; display: inline-block; }
 
-        /* Grid */
-        .section-header { margin: 3rem 0 1.5rem; border-bottom: 2px solid var(--border); display: flex; justify-content: space-between; align-items: flex-end; }
-        .section-header h2 { font-size: 1.5rem; color: var(--dark); border-bottom: 3px solid var(--primary); margin-bottom: -2px; padding-bottom: 0.5rem; }
-        .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+        /* Grid Performance */
+        .section-header { margin: 2rem 0 1rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-end; }
+        .section-header h2 { font-size: 1.25rem; font-weight: 800; border-bottom: 2px solid var(--primary); margin-bottom: -1px; padding-bottom: 0.4rem; }
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
         
-        /* Cards */
-        .card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); transition: var(--transition); cursor: pointer; display: flex; flex-direction: column; }
-        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-        .card-img { height: 200px; width: 100%; object-fit: cover; }
-        .card-body { padding: 1.5rem; flex-grow: 1; }
-        .card-meta { font-size: 0.75rem; color: var(--gray); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
-        .card-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.8rem; line-height: 1.3; }
-        .read-more { color: var(--primary); font-weight: 700; font-size: 0.85rem; }
+        .card { background: white; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); transition: var(--transition); cursor: pointer; display: flex; flex-direction: column; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: #cbd5e1; }
+        .card-img { height: 180px; width: 100%; object-fit: cover; background: #e2e8f0; }
+        .card-body { padding: 1.2rem; flex-grow: 1; }
+        .card-meta { font-size: 0.7rem; color: var(--gray); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem; }
+        .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; line-height: 1.3; color: var(--dark); }
+        .read-more { color: var(--primary); font-weight: 700; font-size: 0.8rem; }
 
-        /* Pagination Styling */
-        .pagination { display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin: 4rem 0 2rem; }
-        .pg-btn { padding: 0.6rem 1.2rem; border: 1px solid var(--border); background: white; cursor: pointer; font-weight: 600; border-radius: 6px; transition: var(--transition); }
+        .pagination { display: flex; justify-content: center; align-items: center; gap: 0.4rem; margin: 3rem 0; }
+        .pg-btn { width: 36px; height: 36px; border: 1px solid var(--border); background: white; cursor: pointer; font-weight: 600; border-radius: 8px; transition: 0.15s; display: flex; align-items: center; justify-content: center; }
         .pg-btn:hover { border-color: var(--primary); color: var(--primary); }
         .pg-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-        /* Carousel Styling */
-        .carousel-container { position: relative; width: 100%; height: 350px; border-radius: 16px; overflow: hidden; margin-top: 2rem; box-shadow: var(--shadow); }
-        .carousel-track { display: flex; height: 100%; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        /* Faster Carousel */
+        .carousel-container { position: relative; width: 100%; height: 320px; border-radius: 16px; overflow: hidden; margin-top: 1.5rem; background: #000; }
+        .carousel-track { display: flex; height: 100%; transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); will-change: transform; }
         .carousel-slide { min-width: 100%; height: 100%; position: relative; }
-        .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
-        .carousel-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; }
-        .carousel-caption h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-        .carousel-nav { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; padding: 0 1rem; transform: translateY(-50%); pointer-events: none; }
-        .carousel-btn { background: rgba(255,255,255,0.2); border: none; width: 45px; height: 45px; border-radius: 50%; color: white; cursor: pointer; pointer-events: auto; backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: background 0.2s; }
-        .carousel-btn:hover { background: rgba(255,255,255,0.4); }
-        .carousel-dots { position: absolute; bottom: 15px; width: 100%; display: flex; justify-content: center; gap: 8px; }
-        .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: 0.3s; }
-        .dot.active { background: var(--primary); width: 24px; border-radius: 10px; }
+        .carousel-slide img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; }
+        .carousel-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; }
+        .carousel-caption h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.4rem; letter-spacing: -0.5px; }
+        .carousel-btn { background: rgba(255,255,255,0.15); border: none; width: 40px; height: 40px; border-radius: 50%; color: white; cursor: pointer; pointer-events: auto; backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+        .carousel-btn:hover { background: rgba(255,255,255,0.3); }
+        .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: 0.2s; }
+        .dot.active { background: var(--primary); width: 20px; border-radius: 10px; }
 
-        /* Article View */
-        .article-content { max-width: 800px; margin: 3rem auto; background: white; padding: 3rem; border-radius: 16px; border: 1px solid var(--border); }
-        .article-header h1 { font-size: 2.8rem; line-height: 1.1; margin: 1rem 0; }
-        .article-main-img { width: 100%; border-radius: 12px; margin: 2rem 0; height: 450px; object-fit: cover; }
-        .article-text { font-size: 1.15rem; line-height: 1.8; color: #334155; }
-        .article-text p { margin-bottom: 1.5rem; }
-        .btn-back { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 700; cursor: pointer; margin-bottom: 2rem; }
-
-        /* Footer */
-        .newsletter { background: var(--dark); color: white; padding: 4rem 0; text-align: center; margin-top: 5rem; }
-        .sub-form { max-width: 500px; margin: 1.5rem auto 0; display: flex; gap: 10px; }
-        .sub-form input { flex: 1; padding: 0.8rem 1rem; border-radius: 6px; border: none; outline: none; }
-        .sub-btn { background: var(--primary); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; font-weight: 700; cursor: pointer; transition: 0.2s; }
-        .sub-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .newsletter { background: #0f172a; color: white; padding: 3rem 0; text-align: center; margin-top: 4rem; }
+        .sub-form { max-width: 400px; margin: 1.2rem auto 0; display: flex; gap: 8px; }
+        .sub-form input { flex: 1; padding: 0.7rem 1rem; border-radius: 8px; border: 1px solid #1e293b; background: #1e293b; color: white; outline: none; }
+        .sub-btn { background: var(--primary); color: white; border: none; padding: 0.7rem 1.2rem; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s; }
         
-        /* Custom Notification Toast */
         #notification-toast {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--primary);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            transform: translateY(150%);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 9999;
-            max-width: 300px;
+            position: fixed; bottom: 20px; right: 20px; background: var(--dark); color: white;
+            padding: 0.8rem 1.2rem; border-radius: 10px; box-shadow: var(--shadow);
+            transform: translateY(200%); transition: transform 0.3s ease; z-index: 10001; font-size: 0.9rem;
+            border-left: 4px solid var(--primary);
         }
         #notification-toast.show { transform: translateY(0); }
 
-        footer { background: #000; color: #94a3b8; padding: 4rem 0 2rem; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
-        .footer-col h4 { color: white; margin-bottom: 1.2rem; }
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: 0.6rem; cursor: pointer; transition: 0.2s; }
+        footer { background: #020617; color: #64748b; padding: 3rem 0 1.5rem; font-size: 0.85rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-col h4 { color: white; margin-bottom: 1rem; font-size: 0.9rem; }
+        .footer-col li { margin-bottom: 0.4rem; cursor: pointer; }
         .footer-col li:hover { color: var(--primary); }
 
         @media (max-width: 768px) {
             .hero { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
-            .article-content { padding: 1.5rem; }
-            .article-header h1 { font-size: 2rem; }
-            .carousel-container { height: 250px; }
-            .carousel-caption h3 { font-size: 1.2rem; }
+            .header { height: 50px; }
+            .carousel-container { height: 220px; }
+            .carousel-caption h3 { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -137,13 +112,12 @@
 
     <header class="header">
         <div class="container nav-content">
-            <div class="logo" onclick="navigateTo('home')">VOX News</div>
+            <div class="logo" onclick="navigateTo('home')">VOX</div>
             <ul class="nav-links">
                 <li><a onclick="navigateTo('home')">Home</a></li>
                 <li><a onclick="navigateTo('category', 'Technology')">Tech</a></li>
                 <li><a onclick="navigateTo('category', 'Business')">Business</a></li>
                 <li><a onclick="navigateTo('category', 'Health')">Health</a></li>
-                <li><a onclick="navigateTo('category', 'Science')">Science</a></li>
             </ul>
         </div>
     </header>
@@ -156,14 +130,13 @@
         </div>
     </div>
 
-    <!-- Notification Toast -->
     <div id="notification-toast"></div>
 
     <div id="page-home" class="page active">
         <div class="container">
             <section class="hero">
                 <div class="hero-main" onclick="navigateTo('article', 1)">
-                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=1200" class="hero-img">
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=70&w=1200" class="hero-img" loading="eager">
                     <div class="hero-overlay">
                         <span class="badge">Politics</span>
                         <h2>Global Summit Focuses on Renewable Energy Transition</h2>
@@ -171,14 +144,14 @@
                 </div>
                 <div class="hero-side">
                     <div class="side-item" onclick="navigateTo('article', 4)">
-                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=600" class="hero-img">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=70&w=600" class="hero-img" loading="eager">
                         <div class="hero-overlay">
                             <span class="badge">Tech</span>
                             <h3>The Silicon Valley Shift: What's Next?</h3>
                         </div>
                     </div>
                     <div class="side-item" onclick="navigateTo('article', 3)">
-                        <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80&w=600" class="hero-img">
+                        <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=70&w=600" class="hero-img" loading="eager">
                         <div class="hero-overlay">
                             <span class="badge">Sports</span>
                             <h3>The Underdog Championship Victory</h3>
@@ -196,47 +169,46 @@
                 <button class="pg-btn" onclick="changePage(3)">3</button>
             </div>
 
-            <!-- NEWS CAROUSEL SECTION -->
             <div class="section-header"><h2>Trending Stories</h2></div>
             <div class="carousel-container">
                 <div class="carousel-track" id="carousel-track">
                     <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200" alt="Space">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=70&w=1200" alt="Space">
                         <div class="carousel-caption">
                             <span class="badge">Science</span>
                             <h3>Deep Space Exploration: Reaching the Edge</h3>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" alt="Business">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=70&w=1200" alt="Business">
                         <div class="carousel-caption">
                             <span class="badge">Business</span>
                             <h3>Market Trends: The Digital Economy Surge</h3>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1511174511562-5f7f185854c8?auto=format&fit=crop&q=80&w=1200" alt="Health">
+                        <img src="https://images.unsplash.com/photo-1511174511562-5f7f185854c8?auto=format&fit=crop&q=70&w=1200" alt="Health">
                         <div class="carousel-caption">
                             <span class="badge">Health</span>
                             <h3>Innovations in Personal Well-being</h3>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" alt="Tech">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=70&w=1200" alt="Tech">
                         <div class="carousel-caption">
                             <span class="badge">Technology</span>
                             <h3>The Rise of Autonomous Systems</h3>
                         </div>
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1444653614773-995c3aa38fe5?auto=format&fit=crop&q=80&w=1200" alt="Culture">
+                        <img src="https://images.unsplash.com/photo-1444653614773-995c3aa38fe5?auto=format&fit=crop&q=70&w=1200" alt="Culture">
                         <div class="carousel-caption">
                             <span class="badge">Culture</span>
-                            <h3>Rediscovering Urban Architectural Heritage</h3>
+                            <h3>Rediscovering Urban Heritage</h3>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-nav">
+                <div class="carousel-nav" style="position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; padding: 0 1rem; transform: translateY(-50%); pointer-events: none;">
                     <button class="carousel-btn" onclick="moveCarousel(-1)">❮</button>
                     <button class="carousel-btn" onclick="moveCarousel(1)">❯</button>
                 </div>
@@ -260,17 +232,17 @@
 
     <div id="page-article" class="page">
         <div class="container">
-            <div class="article-content" id="article-viewer"></div>
+            <div id="article-viewer" style="max-width: 800px; margin: 2rem auto;"></div>
         </div>
     </div>
 
     <section class="newsletter">
         <div class="container">
-            <h2>Get the Daily Briefing</h2>
-            <p>Join 50,000+ subscribers for curated insights delivered to your inbox.</p>
+            <h3>The Daily Briefing</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Join 50,000+ subscribers.</p>
             <form id="newsletter-form" class="sub-form">
                 <input type="email" id="subscriber-email" placeholder="Email address" required>
-                <button type="submit" id="sub-btn" class="sub-btn">Subscribe</button>
+                <button type="submit" id="sub-btn" class="sub-btn">Join</button>
             </form>
         </div>
     </section>
@@ -279,30 +251,27 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h2 style="color:var(--primary)">VOX News</h2>
-                    <p style="margin-top:1rem">Reporting the truth with integrity since 1998.</p>
+                    <h3 style="color:var(--primary)">VOX News</h3>
+                    <p style="margin-top:0.5rem">Integrity in reporting since 1998.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Categories</h4>
                     <ul>
-                        <li onclick="navigateTo('category', 'Technology')">Technology</li>
+                        <li onclick="navigateTo('category', 'Technology')">Tech</li>
                         <li onclick="navigateTo('category', 'Business')">Business</li>
                         <li onclick="navigateTo('category', 'Science')">Science</li>
-                        <li onclick="navigateTo('category', 'Health')">Health</li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4>
+                    <h4>Legal</h4>
                     <ul>
-                        <li>About Us</li>
-                        <li>Contact</li>
-                        <li>Careers</li>
-                        <li>Privacy Policy</li>
+                        <li>Privacy</li>
+                        <li>Terms</li>
                     </ul>
                 </div>
             </div>
-            <div style="border-top: 1px solid #334155; padding-top: 2rem; text-align: center; font-size: 0.8rem;">
-                &copy; 2025 VOX News Media Group. All rights reserved.
+            <div style="border-top: 1px solid #1e293b; padding-top: 1.5rem; text-align: center; font-size: 0.75rem; color: #475569;">
+                &copy; 2026 VOX News Media Group.
             </div>
         </div>
     </footer>
@@ -313,215 +282,150 @@
     <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore-compat.js"></script>
 
     <script>
-        // FIREBASE INITIALIZATION
+        // CORE INITIALIZATION
         const firebaseConfig = JSON.parse(__firebase_config);
         const app = firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore(app);
         const auth = firebase.auth(app);
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'vox-news-portal';
 
-        // Auth Logic
+        // Optimized Auth
         async function initAuth() {
-            if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                await auth.signInWithCustomToken(__initial_auth_token);
-            } else {
-                await auth.signInAnonymously();
-            }
+            try {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await auth.signInWithCustomToken(__initial_auth_token);
+                } else {
+                    await auth.signInAnonymously();
+                }
+            } catch (e) { console.error("Auth failed", e); }
         }
         initAuth();
 
-        // ARTICLE DATA
-        const allArticles = [];
+        // Optimized Article Generation (Static for speed, dynamic metadata)
         const categories = ["Technology", "Business", "Health", "Science", "Politics", "Sports"];
-        for (let i = 1; i <= 30; i++) {
-            const cat = categories[i % categories.length];
-            allArticles.push({
-                id: i,
-                title: i <= 6 ? ["Global Summit Focuses on Renewable Energy Transition", "The Future of AI in Modern Medicine", "Underdog Championship Victory Shakes the Sports World", "The Silicon Valley Shift: Tech Giants Move East", "Market Rally: Investors Optimistic About Q4", "Breakthrough in Sustainable Urban Farming"][i-1] : `${cat} Insights: Update #${i}`,
+        const allArticles = Array.from({length: 30}, (_, i) => {
+            const id = i + 1;
+            const cat = categories[id % categories.length];
+            return {
+                id,
+                title: id <= 6 ? [
+                    "Global Summit Focuses on Renewable Energy Transition",
+                    "The Future of AI in Modern Medicine",
+                    "Underdog Championship Victory Shakes the Sports World",
+                    "The Silicon Valley Shift: Tech Giants Move East",
+                    "Market Rally: Investors Optimistic About Q4",
+                    "Breakthrough in Sustainable Urban Farming"
+                ][id-1] : `${cat} Insights: Update #${id}`,
                 category: cat,
-                date: `Oct ${31-i}, 2025`,
-                image: i <= 6 ? [
-                    "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=800",
-                    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800",
-                    "https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80&w=800",
-                    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800",
-                    "https://images.unsplash.com/photo-1611974714013-3c8c0d088bad?auto=format&fit=crop&q=80&w=800",
-                    "https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=800"
-                ][i-1] : `https://picsum.photos/seed/${i + 100}/800/500`,
-                content: `This is a comprehensive report on the latest developments in ${cat}. The world is changing rapidly, and staying informed is more important than ever. Our team of journalists works around the clock to bring you the most accurate and up-to-date information.`
-            });
-        }
+                date: `Oct ${31-id}, 2025`,
+                image: id <= 6 ? [
+                    "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=70&w=800",
+                    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=70&w=800",
+                    "https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=70&w=800",
+                    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=70&w=800",
+                    "https://images.unsplash.com/photo-1611974714013-3c8c0d088bad?auto=format&fit=crop&q=70&w=800",
+                    "https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=70&w=800"
+                ][id-1] : `https://picsum.photos/seed/${id}/600/400`,
+                content: "Detailed report content here..."
+            };
+        });
 
         let currentPage = 1;
         const itemsPerPage = 10;
 
-        // NOTIFICATION LOGIC
         function showToast(message) {
             const toast = document.getElementById('notification-toast');
             toast.innerText = message;
             toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 5000);
+            setTimeout(() => toast.classList.remove('show'), 4000);
         }
 
-        // Newsletter Logic
-        const newsletterForm = document.getElementById('newsletter-form');
-        newsletterForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const emailInput = document.getElementById('subscriber-email');
-            const subBtn = document.getElementById('sub-btn');
-            const email = emailInput.value;
-
-            if (!auth.currentUser) return;
-            
-            subBtn.disabled = true;
-            subBtn.innerText = "Processing...";
-
-            try {
-                await db.collection('artifacts').doc(appId).collection('public').doc('data').collection('subscribers').add({
-                    email: email,
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
-                });
-
-                showToast(`Success! ${email} will now receive real-time news alerts.`);
-                emailInput.value = '';
-                subBtn.innerText = "Subscribed!";
-                localStorage.setItem('vox_subscribed', 'true');
-            } catch (err) {
-                showToast("Subscription failed. Please try again.");
-                subBtn.disabled = false;
-                subBtn.innerText = "Subscribe";
-            }
-        });
-
-        // Content listener
-        db.collection('artifacts').doc(appId).collection('public').doc('data').collection('site_updates')
-            .onSnapshot((snapshot) => {
-                if (localStorage.getItem('vox_subscribed') === 'true') {
-                    snapshot.docChanges().forEach((change) => {
-                        if (change.type === "added") {
-                            showToast(`New Content Uploaded: ${change.doc.data().title || 'Latest Update'}`);
-                        }
-                    });
-                }
-            });
-
-        // CAROUSEL LOGIC
+        // CAROUSEL OPTIMIZED
         let carouselIndex = 0;
-        const carouselTotal = 5;
         let carouselInterval;
-
         function moveCarousel(dir) {
-            carouselIndex = (carouselIndex + dir + carouselTotal) % carouselTotal;
-            updateCarousel();
-            resetCarouselTimer();
-        }
-
-        function setCarousel(index) {
-            carouselIndex = index;
-            updateCarousel();
-            resetCarouselTimer();
-        }
-
-        function updateCarousel() {
+            carouselIndex = (carouselIndex + dir + 5) % 5;
             const track = document.getElementById('carousel-track');
             const dots = document.getElementById('carousel-dots').children;
-            track.style.transform = `translateX(-${carouselIndex * 100}%)`;
-            
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].classList.toggle('active', i === carouselIndex);
-            }
+            track.style.transform = `translate3d(-${carouselIndex * 100}%, 0, 0)`;
+            Array.from(dots).forEach((dot, i) => dot.classList.toggle('active', i === carouselIndex));
+            resetCarouselTimer();
         }
-
+        function setCarousel(index) {
+            carouselIndex = index;
+            moveCarousel(0);
+        }
         function resetCarouselTimer() {
             clearInterval(carouselInterval);
             carouselInterval = setInterval(() => moveCarousel(1), 5000);
         }
 
-        // ROUTING & RENDERING
+        // NAVIGATION & RENDERING
         function navigateTo(page, param, isBack = false) {
-            if (!isBack) {
-                history.pushState({ page, param }, '', '');
-            }
+            if (!isBack) history.pushState({ page, param }, '', '');
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            window.scrollTo(0,0);
+            window.scrollTo({top: 0, behavior: 'auto'}); // Immediate for speed
 
-            if (page === 'home') {
-                document.getElementById('page-home').classList.add('active');
-                renderHome();
-                resetCarouselTimer();
-            } else if (page === 'category') {
-                renderCategory(param);
-                document.getElementById('page-category').classList.add('active');
-            } else if (page === 'article') {
-                renderArticle(param);
-                document.getElementById('page-article').classList.add('active');
-            }
-        }
-
-        window.onpopstate = (event) => {
-            if (event.state) navigateTo(event.state.page, event.state.param, true);
-            else navigateTo('home', null, true);
-        };
-
-        function goBack() {
-            if (window.history.length > 1) window.history.back();
-            else navigateTo('home');
-        }
-
-        function changePage(pageNum) {
-            currentPage = pageNum;
-            renderHome();
+            const pageMap = {
+                'home': () => { document.getElementById('page-home').classList.add('active'); renderHome(); resetCarouselTimer(); },
+                'category': () => { renderCategory(param); document.getElementById('page-category').classList.add('active'); },
+                'article': () => { renderArticle(param); document.getElementById('page-article').classList.add('active'); }
+            };
+            if(pageMap[page]) pageMap[page]();
         }
 
         function renderHome() {
             const grid = document.getElementById('home-grid');
             const startIndex = (currentPage - 1) * itemsPerPage;
-            const pageItems = allArticles.slice(startIndex, startIndex + itemsPerPage);
-            grid.innerHTML = pageItems.map(article => createCard(article)).join('');
-            document.querySelectorAll('.pg-btn').forEach((btn, idx) => {
-                btn.classList.toggle('active', idx + 1 === currentPage);
-            });
+            const items = allArticles.slice(startIndex, startIndex + itemsPerPage);
+            grid.innerHTML = items.map(a => createCard(a)).join('');
+            document.querySelectorAll('.pg-btn').forEach((btn, i) => btn.classList.toggle('active', i + 1 === currentPage));
         }
 
         function renderCategory(cat) {
             document.getElementById('category-title').innerText = cat;
             const filtered = allArticles.filter(a => a.category === cat);
-            const grid = document.getElementById('category-grid');
-            grid.innerHTML = filtered.map(article => createCard(article)).join('');
+            document.getElementById('category-grid').innerHTML = filtered.map(a => createCard(a)).join('');
         }
 
         function renderArticle(id) {
-            const article = allArticles.find(a => a.id == id);
-            const viewer = document.getElementById('article-viewer');
-            viewer.innerHTML = `
-                <div class="btn-back" onclick="goBack()">← Go Back</div>
-                <div class="article-header">
-                    <span class="badge">${article.category}</span>
-                    <h1>${article.title}</h1>
-                    <div class="card-meta">Published ${article.date}</div>
-                </div>
-                <img src="${article.image}" class="article-main-img">
-                <div class="article-text"><p>${article.content}</p></div>
+            const a = allArticles.find(x => x.id == id);
+            document.getElementById('article-viewer').innerHTML = `
+                <div style="cursor:pointer; color:var(--primary); font-weight:700; margin-bottom:1rem;" onclick="history.back()">← Back</div>
+                <span class="badge">${a.category}</span>
+                <h1 style="font-size: 2rem; margin: 0.5rem 0;">${a.title}</h1>
+                <p style="color:var(--gray); font-size:0.8rem;">Published ${a.date}</p>
+                <img src="${a.image}" style="width:100%; border-radius:12px; margin: 1.5rem 0; aspect-ratio:16/9; object-fit:cover;">
+                <div style="line-height:1.7; color:#334155;">${a.content}</div>
             `;
         }
 
-        function createCard(article) {
+        function createCard(a) {
+            // Using 'lazy' for grid images to speed up initial paint
             return `
-                <div class="card" onclick="navigateTo('article', ${article.id})">
-                    <img src="${article.image}" class="card-img">
+                <div class="card" onclick="navigateTo('article', ${a.id})">
+                    <img src="${a.image}" class="card-img" loading="lazy">
                     <div class="card-body">
-                        <div class="card-meta"><span>${article.category}</span> • <span>${article.date}</span></div>
-                        <h3 class="card-title">${article.title}</h3>
-                        <span class="read-more">Read Full Story →</span>
+                        <div class="card-meta"><span>${a.category}</span> • <span>${a.date}</span></div>
+                        <h3 class="card-title">${a.title}</h3>
+                        <span class="read-more">Read More →</span>
                     </div>
                 </div>
             `;
         }
 
+        function changePage(n) {
+            currentPage = n;
+            renderHome();
+        }
+
+        window.onpopstate = (e) => navigateTo(e.state?.page || 'home', e.state?.param, true);
+        
         window.onload = () => {
-            history.replaceState({page: 'home', param: null}, '', '');
             renderHome();
             resetCarouselTimer();
+            // Ticker delay start for better main thread priority
+            setTimeout(() => document.querySelector('.ticker').style.animationPlayState = 'running', 100);
         };
     </script>
 </body>
